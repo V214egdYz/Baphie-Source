@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="idleCinnabar.png">
+	<!-- NOT created with Adobe Animate version 20.0.0.17400, I don't have it ;w; ->
+	<!- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Gote Down0000" x="0" y="0" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Gote Left0000" x="0" y="0" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Gote Right0000" x="0" y="0" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Gote Up0000" x="0" y="0" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Gote Idle0000" x="0" y="0" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+</TextureAtlas>

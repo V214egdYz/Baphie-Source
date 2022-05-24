@@ -16,6 +16,8 @@ import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
+import Song.SwagSong;
+
 
 class PauseSubState extends MusicBeatSubstate
 {
@@ -57,7 +59,8 @@ class PauseSubState extends MusicBeatSubstate
 		levelDifficulty.setFormat(Paths.font('vcr.ttf'), 32);
 		levelDifficulty.updateHitbox();
 		add(levelDifficulty);
-
+		
+		
 		levelDifficulty.alpha = 0;
 		levelInfo.alpha = 0;
 

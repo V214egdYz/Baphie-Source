@@ -12,3 +12,6 @@ baphHouseBad
 baphHouseGood
 baphHouseBest
 baphHouseWorst
+cornField
+cornFieldNoon
+cornFieldDark

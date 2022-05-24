@@ -21,3 +21,9 @@ baphie-happy
 baphie-joy
 bf-dark
 baphie-sad
+corn
+bf-noon
+corn-noon
+corn-dark
+cinnabar
+idle-cinnabar

@@ -16,28 +16,36 @@ class Ratings
             ranking = "(FC)";
         else if (PlayState.misses < 10) // Single Digit Combo Breaks
             ranking = "(SDCB)";
+        else if (PlayState.misses > 9 && PlayState.misses < 100) // Double Digit Combo Breaks
+            ranking = "(DDCB)";
+        else if (PlayState.misses > 99 && PlayState.misses < 1000) // Triple Digit Combo Breaks
+            ranking = "(TDCB)";
+        else if (PlayState.misses > 999 && PlayState.misses < 10000) // Quadruple Digit Combo Breaks
+            ranking = "(QdDCB)";
+        else if (PlayState.misses > 9999) // WAYYY too many Combo Breaks
+            ranking = "(Got dayum)";
         else
             ranking = "(Clear)";
 
         // WIFE TIME :)))) (based on Wife3)
 
         var wifeConditions:Array<Bool> = [
-            accuracy >= 99.9935, // AAAAA
-            accuracy >= 99.980, // AAAA:
-            accuracy >= 99.970, // AAAA.
-            accuracy >= 99.955, // AAAA
-            accuracy >= 99.90, // AAA:
-            accuracy >= 99.80, // AAA.
-            accuracy >= 99.70, // AAA
-            accuracy >= 99, // AA:
-            accuracy >= 96.50, // AA.
-            accuracy >= 93, // AA
-            accuracy >= 90, // A:
-            accuracy >= 85, // A.
-            accuracy >= 80, // A
-            accuracy >= 70, // B
-            accuracy >= 60, // C
-            accuracy < 60 // D
+            accuracy >= 99.9935, // Perfect!
+            accuracy >= 99.980, // SSS+
+            accuracy >= 99.970, // SSS
+            accuracy >= 99.955, // SS+
+            accuracy >= 99.90, // SS
+            accuracy >= 99.80, // S+
+            accuracy >= 99.70, // S
+            accuracy >= 99, // A+++
+            accuracy >= 96.50, // A++
+            accuracy >= 93, // A+
+            accuracy >= 90, // A
+            accuracy >= 85, // B+
+            accuracy >= 80, // B
+            accuracy >= 70, // C
+            accuracy >= 60, // D
+            accuracy < 60 // D-
         ];
 
         for(i in 0...wifeConditions.length)
@@ -48,37 +56,37 @@ class Ratings
                 switch(i)
                 {
                     case 0:
-                        ranking += " AAAAA";
+                        ranking += " Perfect!";
                     case 1:
-                        ranking += " AAAA:";
+                        ranking += " SSS+";
                     case 2:
-                        ranking += " AAAA.";
+                        ranking += " SSS";
                     case 3:
-                        ranking += " AAAA";
+                        ranking += " SS+";
                     case 4:
-                        ranking += " AAA:";
+                        ranking += " SS";
                     case 5:
-                        ranking += " AAA.";
+                        ranking += " S+";
                     case 6:
-                        ranking += " AAA";
+                        ranking += " S";
                     case 7:
-                        ranking += " AA:";
+                        ranking += " A+++";
                     case 8:
-                        ranking += " AA.";
+                        ranking += " A++";
                     case 9:
-                        ranking += " AA";
+                        ranking += " A+";
                     case 10:
-                        ranking += " A:";
-                    case 11:
-                        ranking += " A.";
-                    case 12:
                         ranking += " A";
-                    case 13:
+                    case 11:
+                        ranking += " B+";
+                    case 12:
                         ranking += " B";
-                    case 14:
+                    case 13:
                         ranking += " C";
-                    case 15:
+                    case 14:
                         ranking += " D";
+                    case 15:
+                        ranking += " D-";
                 }
                 break;
             }
@@ -132,9 +140,9 @@ class Ratings
     public static function CalculateRanking(score:Int,scoreDef:Int,nps:Int,maxNPS:Int,accuracy:Float):String
     {
         return 
-        (FlxG.save.data.npsDisplay ? "NPS: " + nps + " (Max " + maxNPS + ")" + (!FlxG.save.data.botplay ? " | " : "") : "") + (!FlxG.save.data.botplay ?	// NPS Toggle
+        (FlxG.save.data.npsDisplay ? "NPS: " + nps + " (Max " + maxNPS + ")" + " | Notes Hit:" + (PlayState.shits + PlayState.bads + PlayState.goods + PlayState.sicks) + (!FlxG.save.data.botplay ? " | " : "") : "") +  (!FlxG.save.data.botplay ?	// NPS Toggle
         "Score:" + (Conductor.safeFrames != 10 ? score + " (" + scoreDef + ")" : "" + score) + 									// Score
-        " | Combo Breaks:" + PlayState.misses + 																				// Misses/Combo Breaks
+        " | Combo Breaks:" + PlayState.misses + 																				// Misses/Combo Breaks                                                                                      
         " | Accuracy:" + (FlxG.save.data.botplay ? "N/A" : HelperFunctions.truncateFloat(accuracy, 2) + " %") +  				// Accuracy
         " | " + GenerateLetterRank(accuracy) : ""); 																			// Letter Rank
     }

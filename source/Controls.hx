@@ -32,6 +32,33 @@ enum abstract Action(String) to String from String
 	var DOWN_R = "down-release";
 	var CLICKL_R = "click-left-release";
 	var CLICKR_R = "click-right-release";
+	var ALT1 = "alt1";
+	var ALT2 = "alt2";
+	var ALT3 = "alt3";
+	var ALT4 = "alt4";
+	var ALT5 = "alt5";
+	var ALT6 = "alt6";
+	var ALT7 = "alt7";
+	var ALT8 = "alt8";
+	var ALT1_P = "alt1-press";
+	var ALT2_P = "alt2-press";
+	var ALT3_P = "alt3-press";
+	var ALT4_P = "alt4-press";
+	var ALT5_P = "alt5-press";
+	var ALT6_P = "alt6-press";
+	var ALT7_P = "alt7-press";
+	var ALT8_P = "alt8-press";
+	var ALT1_R = "alt1-release";
+	var ALT2_R = "alt2-release";
+	var ALT3_R = "alt3-release";
+	var ALT4_R = "alt4-release";
+	var ALT5_R = "alt5-release";
+	var ALT6_R = "alt6-release";
+	var ALT7_R = "alt7-release";
+	var ALT8_R = "alt8-release";
+	var STAR = "star";
+	var STAR_P = "star-press";
+	var STAR_R = "star-release";
 	var ACCEPT = "accept";
 	var BACK = "back";
 	var PAUSE = "pause";
@@ -60,6 +87,33 @@ abstract Action(String) to String from String
 	var DOWN_R = "down-release";
 	var CLICKL_R = "click-left-release";
 	var CLICKR_R = "click-right-release";
+	var ALT1 = "alt1";
+	var ALT2 = "alt2";
+	var ALT3 = "alt3";
+	var ALT4 = "alt4";
+	var ALT5 = "alt5";
+	var ALT6 = "alt6";
+	var ALT7 = "alt7";
+	var ALT8 = "alt8";
+	var ALT1_P = "alt1-press";
+	var ALT2_P = "alt2-press";
+	var ALT3_P = "alt3-press";
+	var ALT4_P = "alt4-press";
+	var ALT5_P = "alt5-press";
+	var ALT6_P = "alt6-press";
+	var ALT7_P = "alt7-press";
+	var ALT8_P = "alt8-press";
+	var ALT1_R = "alt1-release";
+	var ALT2_R = "alt2-release";
+	var ALT3_R = "alt3-release";
+	var ALT4_R = "alt4-release";
+	var ALT5_R = "alt5-release";
+	var ALT6_R = "alt6-release";
+	var ALT7_R = "alt7-release";
+	var ALT8_R = "alt8-release";
+	var STAR = "star";
+	var STAR_P = "star-press";
+	var STAR_R = "star-release";
 	var ACCEPT = "accept";
 	var BACK = "back";
 	var PAUSE = "pause";
@@ -87,6 +141,15 @@ enum Control
 	DOWN;
 	CLICKL;
 	CLICKR;
+	ALT1;
+	ALT2;
+	ALT3;
+	ALT4;
+	ALT5;
+	ALT6;
+	ALT7;
+	ALT8;
+	STAR;
 	RESET;
 	ACCEPT;
 	BACK;
@@ -126,6 +189,33 @@ class Controls extends FlxActionSet
 	var _downR = new FlxActionDigital(Action.DOWN_R);
 	var _clicklR = new FlxActionDigital(Action.CLICKL_R);
 	var _clickrR = new FlxActionDigital(Action.CLICKR_R);
+	var _alt1 = new FlxActionDigital(Action.ALT1);
+	var _alt2 = new FlxActionDigital(Action.ALT2);
+	var _alt3 = new FlxActionDigital(Action.ALT3);
+	var _alt4 = new FlxActionDigital(Action.ALT4);
+	var _alt5 = new FlxActionDigital(Action.ALT5);
+	var _alt6 = new FlxActionDigital(Action.ALT6);
+	var _alt7 = new FlxActionDigital(Action.ALT7);
+	var _alt8 = new FlxActionDigital(Action.ALT8);
+	var _star = new FlxActionDigital(Action.STAR);
+	var _alt1P = new FlxActionDigital(Action.ALT1_P);
+	var _alt2P = new FlxActionDigital(Action.ALT2_P);
+	var _alt3P = new FlxActionDigital(Action.ALT3_P);
+	var _alt4P = new FlxActionDigital(Action.ALT4_P);
+	var _alt5P = new FlxActionDigital(Action.ALT5_P);
+	var _alt6P = new FlxActionDigital(Action.ALT6_P);
+	var _alt7P = new FlxActionDigital(Action.ALT7_P);
+	var _alt8P = new FlxActionDigital(Action.ALT8_P);
+	var _starP = new FlxActionDigital(Action.STAR_P);
+	var _alt1R = new FlxActionDigital(Action.ALT1_R);
+	var _alt2R = new FlxActionDigital(Action.ALT2_R);
+	var _alt3R = new FlxActionDigital(Action.ALT3_R);
+	var _alt4R = new FlxActionDigital(Action.ALT4_R);
+	var _alt5R = new FlxActionDigital(Action.ALT5_R);
+	var _alt6R = new FlxActionDigital(Action.ALT6_R);
+	var _alt7R = new FlxActionDigital(Action.ALT7_R);
+	var _alt8R = new FlxActionDigital(Action.ALT8_R);
+	var _starR = new FlxActionDigital(Action.STAR_R);
 	var _accept = new FlxActionDigital(Action.ACCEPT);
 	var _back = new FlxActionDigital(Action.BACK);
 	var _pause = new FlxActionDigital(Action.PAUSE);
@@ -171,6 +261,51 @@ class Controls extends FlxActionSet
 	inline function get_CLICKR()
 		return _clickr.check();
 
+	public var ALT1(get, never):Bool;
+
+	inline function get_ALT1()
+		return _alt1.check();
+
+	public var ALT2(get, never):Bool;
+
+	inline function get_ALT2()
+		return _alt2.check();
+
+	public var ALT3(get, never):Bool;
+
+	inline function get_ALT3()
+		return _alt3.check();
+
+	public var ALT4(get, never):Bool;
+
+	inline function get_ALT4()
+		return _alt4.check();
+
+	public var ALT5(get, never):Bool;
+
+	inline function get_ALT5()
+		return _alt5.check();
+
+	public var ALT6(get, never):Bool;
+
+	inline function get_ALT6()
+		return _alt6.check();
+
+	public var ALT7(get, never):Bool;
+
+	inline function get_ALT7()
+		return _alt7.check();
+
+	public var ALT8(get, never):Bool;
+
+	inline function get_ALT8()
+		return _alt8.check();
+
+	public var STAR(get, never):Bool;
+
+	inline function get_STAR()
+		return _star.check();
+
 	public var UP_P(get, never):Bool;
 
 	inline function get_UP_P()
@@ -201,6 +336,51 @@ class Controls extends FlxActionSet
 	inline function get_CLICKR_P()
 		return _clickrP.check();
 
+	public var ALT1_P(get, never):Bool;
+
+	inline function get_ALT1_P()
+		return _alt1P.check();
+
+	public var ALT2_P(get, never):Bool;
+
+	inline function get_ALT2_P()
+		return _alt2P.check();
+
+	public var ALT3_P(get, never):Bool;
+
+	inline function get_ALT3_P()
+		return _alt3P.check();
+
+	public var ALT4_P(get, never):Bool;
+
+	inline function get_ALT4_P()
+		return _alt4P.check();
+
+	public var ALT5_P(get, never):Bool;
+
+	inline function get_ALT5_P()
+		return _alt5P.check();
+
+	public var ALT6_P(get, never):Bool;
+
+	inline function get_ALT6_P()
+		return _alt6P.check();
+
+	public var ALT7_P(get, never):Bool;
+
+	inline function get_ALT7_P()
+		return _alt7P.check();
+
+	public var ALT8_P(get, never):Bool;
+
+	inline function get_ALT8_P()
+		return _alt8P.check();
+
+	public var STAR_P(get, never):Bool;
+
+	inline function get_STAR_P()
+		return _starP.check();
+
 	public var UP_R(get, never):Bool;
 
 	inline function get_UP_R()
@@ -230,6 +410,51 @@ class Controls extends FlxActionSet
 
 	inline function get_CLICKR_R()
 		return _clickrR.check();
+
+	public var ALT1_R(get, never):Bool;
+
+	inline function get_ALT1_R()
+		return _alt1R.check();
+
+	public var ALT2_R(get, never):Bool;
+
+	inline function get_ALT2_R()
+		return _alt2R.check();
+
+	public var ALT3_R(get, never):Bool;
+
+	inline function get_ALT3_R()
+		return _alt3R.check();
+
+	public var ALT4_R(get, never):Bool;
+
+	inline function get_ALT4_R()
+		return _alt4R.check();
+
+	public var ALT5_R(get, never):Bool;
+
+	inline function get_ALT5_R()
+		return _alt5R.check();
+
+	public var ALT6_R(get, never):Bool;
+
+	inline function get_ALT6_R()
+		return _alt6R.check();
+
+	public var ALT7_R(get, never):Bool;
+
+	inline function get_ALT7_R()
+		return _alt7R.check();
+
+	public var ALT8_R(get, never):Bool;
+
+	inline function get_ALT8_R()
+		return _alt8R.check();
+
+	public var STAR_R(get, never):Bool;
+
+	inline function get_STAR_R()
+		return _starR.check();
 
 	public var ACCEPT(get, never):Bool;
 
@@ -267,18 +492,45 @@ class Controls extends FlxActionSet
 		add(_down);
 		add(_clickl);
 		add(_clickr);
+		add(_alt1);
+		add(_alt2);
+		add(_alt3);
+		add(_alt4);
+		add(_alt5);
+		add(_alt6);
+		add(_alt7);
+		add(_alt8);
+		add(_star);
 		add(_upP);
 		add(_leftP);
 		add(_rightP);
 		add(_downP);
 		add(_clicklP);
 		add(_clickrP);
+		add(_alt1P);
+		add(_alt2P);
+		add(_alt3P);
+		add(_alt4P);
+		add(_alt5P);
+		add(_alt6P);
+		add(_alt7P);
+		add(_alt8P);
+		add(_starP);
 		add(_upR);
 		add(_leftR);
 		add(_rightR);
 		add(_downR);
 		add(_clicklR);
 		add(_clickrR);
+		add(_alt1R);
+		add(_alt2R);
+		add(_alt3R);
+		add(_alt4R);
+		add(_alt5R);
+		add(_alt6R);
+		add(_alt7R);
+		add(_alt8R);
+		add(_starR);
 		add(_accept);
 		add(_back);
 		add(_pause);
@@ -301,18 +553,45 @@ class Controls extends FlxActionSet
 		add(_down);
 		add(_clickl);
 		add(_clickr);
+		add(_alt1);
+		add(_alt2);
+		add(_alt3);
+		add(_alt4);
+		add(_alt5);
+		add(_alt6);
+		add(_alt7);
+		add(_alt8);
+		add(_star);
 		add(_upP);
 		add(_leftP);
 		add(_rightP);
 		add(_downP);
 		add(_clicklP);
 		add(_clickrP);
+		add(_alt1P);
+		add(_alt2P);
+		add(_alt3P);
+		add(_alt4P);
+		add(_alt5P);
+		add(_alt6P);
+		add(_alt7P);
+		add(_alt8P);
+		add(_starP);
 		add(_upR);
 		add(_leftR);
 		add(_rightR);
 		add(_downR);
 		add(_clicklR);
 		add(_clickrR);
+		add(_alt1R);
+		add(_alt2R);
+		add(_alt3R);
+		add(_alt4R);
+		add(_alt5R);
+		add(_alt6R);
+		add(_alt7R);
+		add(_alt8R);
+		add(_starR);
 		add(_accept);
 		add(_back);
 		add(_pause);
@@ -369,6 +648,15 @@ class Controls extends FlxActionSet
 			case RIGHT: _right;
 			case CLICKL: _clickl;
 			case CLICKR: _clickr;
+			case ALT1: _alt1;
+			case ALT2: _alt2;
+			case ALT3: _alt3;
+			case ALT4: _alt4;
+			case ALT5: _alt5;
+			case ALT6: _alt6;
+			case ALT7: _alt7;
+			case ALT8: _alt8;
+			case STAR: _star;
 			case ACCEPT: _accept;
 			case BACK: _back;
 			case PAUSE: _pause;
@@ -417,6 +705,42 @@ class Controls extends FlxActionSet
 				func(_clickr, PRESSED);
 				func(_clickrP, JUST_PRESSED);
 				func(_clickrR, JUST_RELEASED);
+			case ALT1:
+				func(_alt1, PRESSED);
+				func(_alt1P, JUST_PRESSED);
+				func(_alt1R, JUST_RELEASED);
+			case ALT2:
+				func(_alt2, PRESSED);
+				func(_alt2P, JUST_PRESSED);
+				func(_alt2R, JUST_RELEASED);
+			case ALT3:
+				func(_alt3, PRESSED);
+				func(_alt3P, JUST_PRESSED);
+				func(_alt3R, JUST_RELEASED);
+			case ALT4:
+				func(_alt4, PRESSED);
+				func(_alt4P, JUST_PRESSED);
+				func(_alt4R, JUST_RELEASED);
+			case ALT5:
+				func(_alt5, PRESSED);
+				func(_alt5P, JUST_PRESSED);
+				func(_alt5R, JUST_RELEASED);
+			case ALT6:
+				func(_alt6, PRESSED);
+				func(_alt6P, JUST_PRESSED);
+				func(_alt6R, JUST_RELEASED);
+			case ALT7:
+				func(_alt7, PRESSED);
+				func(_alt7P, JUST_PRESSED);
+				func(_alt7R, JUST_RELEASED);
+			case ALT8:
+				func(_alt8, PRESSED);
+				func(_alt8P, JUST_PRESSED);
+				func(_alt8R, JUST_RELEASED);
+			case STAR:
+				func(_star, PRESSED);
+				func(_starP, JUST_PRESSED);
+				func(_starR, JUST_RELEASED);
 			case ACCEPT:
 				func(_accept, JUST_PRESSED);
 			case BACK:
@@ -576,6 +900,15 @@ class Controls extends FlxActionSet
 				inline bindKeys(Control.RIGHT, [K, FlxKey.RIGHT]);
 				inline bindKeys(Control.CLICKL, [S]);
 				inline bindKeys(Control.CLICKR, [L]);
+				inline bindKeys(Control.ALT1, [A]);
+				inline bindKeys(Control.ALT2, [S]);
+				inline bindKeys(Control.ALT3, [D]);
+				inline bindKeys(Control.ALT4, [F]);
+				inline bindKeys(Control.ALT5, [H]);
+				inline bindKeys(Control.ALT6, [J]);
+				inline bindKeys(Control.ALT7, [K]);
+				inline bindKeys(Control.ALT8, [L]);
+				inline bindKeys(Control.STAR, [SPACE]);
 				inline bindKeys(Control.ACCEPT, [Z, SPACE, ENTER]);
 				inline bindKeys(Control.BACK, [BACKSPACE, ESCAPE]);
 				inline bindKeys(Control.PAUSE, [P, ENTER, ESCAPE]);
@@ -587,6 +920,15 @@ class Controls extends FlxActionSet
 				inline bindKeys(Control.RIGHT, [D, FlxKey.RIGHT]);
 				inline bindKeys(Control.CLICKL, [Q]);
 				inline bindKeys(Control.CLICKR, [E]);
+				inline bindKeys(Control.ALT1, [A]);
+				inline bindKeys(Control.ALT2, [S]);
+				inline bindKeys(Control.ALT3, [D]);
+				inline bindKeys(Control.ALT4, [F]);
+				inline bindKeys(Control.ALT5, [H]);
+				inline bindKeys(Control.ALT6, [J]);
+				inline bindKeys(Control.ALT7, [K]);
+				inline bindKeys(Control.ALT8, [L]);
+				inline bindKeys(Control.STAR, [SPACE]);
 				inline bindKeys(Control.ACCEPT, [G, Z, SPACE, ENTER]);
 				inline bindKeys(Control.BACK, [BACKSPACE, ESCAPE]);
 				inline bindKeys(Control.RESET, [R]);
@@ -597,6 +939,15 @@ class Controls extends FlxActionSet
 				inline bindKeys(Control.RIGHT, [FlxKey.RIGHT]);
 				inline bindKeys(Control.CLICKL, [Q]);
 				inline bindKeys(Control.CLICKR, [E]);
+				inline bindKeys(Control.ALT1, [A]);
+				inline bindKeys(Control.ALT2, [S]);
+				inline bindKeys(Control.ALT3, [D]);
+				inline bindKeys(Control.ALT4, [F]);
+				inline bindKeys(Control.ALT5, [H]);
+				inline bindKeys(Control.ALT6, [J]);
+				inline bindKeys(Control.ALT7, [K]);
+				inline bindKeys(Control.ALT8, [L]);
+				inline bindKeys(Control.STAR, [SPACE]);
 				inline bindKeys(Control.ACCEPT, [O]);
 				inline bindKeys(Control.BACK, [P]);
 				inline bindKeys(Control.PAUSE, [ENTER]);
@@ -614,6 +965,15 @@ class Controls extends FlxActionSet
 				bindKeys(Control.RIGHT, [D, FlxKey.RIGHT]);
 				bindKeys(Control.CLICKL, [Q]);
 				bindKeys(Control.CLICKR, [E]);
+				bindKeys(Control.ALT1, [A]);
+				bindKeys(Control.ALT2, [S]);
+				bindKeys(Control.ALT3, [D]);
+				bindKeys(Control.ALT4, [F]);
+				bindKeys(Control.ALT5, [H]);
+				bindKeys(Control.ALT6, [J]);
+				bindKeys(Control.ALT7, [K]);
+				bindKeys(Control.ALT8, [L]);
+				bindKeys(Control.STAR, [SPACE]);
 				bindKeys(Control.ACCEPT, [Z, SPACE, ENTER]);
 				bindKeys(Control.BACK, [BACKSPACE, ESCAPE]);
 				bindKeys(Control.PAUSE, [P, ENTER, ESCAPE]);
@@ -625,6 +985,15 @@ class Controls extends FlxActionSet
 				bindKeys(Control.RIGHT, [D]);
 				bindKeys(Control.CLICKL, [Q]);
 				bindKeys(Control.CLICKR, [E]);
+				bindKeys(Control.ALT1, [A]);
+				bindKeys(Control.ALT2, [S]);
+				bindKeys(Control.ALT3, [D]);
+				bindKeys(Control.ALT4, [F]);
+				bindKeys(Control.ALT5, [H]);
+				bindKeys(Control.ALT6, [J]);
+				bindKeys(Control.ALT7, [K]);
+				bindKeys(Control.ALT8, [L]);
+				bindKeys(Control.STAR, [SPACE]);
 				bindKeys(Control.ACCEPT, [G, Z]);
 				bindKeys(Control.BACK, [H, X]);
 				bindKeys(Control.PAUSE, [ONE]);
@@ -636,6 +1005,15 @@ class Controls extends FlxActionSet
 				bindKeys(Control.RIGHT, [FlxKey.RIGHT]);
 				bindKeys(Control.CLICKL, [Q]);
 				bindKeys(Control.CLICKR, [E]);
+				bindKeys(Control.ALT1, [A]);
+				bindKeys(Control.ALT2, [S]);
+				bindKeys(Control.ALT3, [D]);
+				bindKeys(Control.ALT4, [F]);
+				bindKeys(Control.ALT5, [H]);
+				bindKeys(Control.ALT6, [J]);
+				bindKeys(Control.ALT7, [K]);
+				bindKeys(Control.ALT8, [L]);
+				bindKeys(Control.STAR, [SPACE]);
 				bindKeys(Control.ACCEPT, [O]);
 				bindKeys(Control.BACK, [P]);
 				bindKeys(Control.PAUSE, [ENTER]);

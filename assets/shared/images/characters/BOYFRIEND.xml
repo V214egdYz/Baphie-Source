@@ -497,4 +497,19 @@
 	<SubTexture name="boyfriend dodge0011" x="390" y="3038" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
 	<SubTexture name="boyfriend dodge0012" x="780" y="3038" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
 	<SubTexture name="boyfriend dodge0013" x="0" y="3038" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="boyfriend woosh0000" x="7226" y="2344" width="375" height="404" frameX="-3" frameY="0" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="boyfriend woosh0001" x="7611" y="2344" width="375" height="404" frameX="-3" frameY="0" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="boyfriend woosh0002" x="0" y="3038" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="boyfriend woosh0003" x="390" y="3038" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="boyfriend woosh0004" x="780" y="3038" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="boyfriend woosh0005" x="0" y="3038" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="boyfriend woosh0006" x="390" y="3038" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="boyfriend woosh0007" x="780" y="3038" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="boyfriend woosh0008" x="0" y="3038" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="boyfriend woosh0009" x="390" y="3038" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="boyfriend woosh0010" x="780" y="3038" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="boyfriend woosh0011" x="0" y="3038" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="boyfriend woosh0012" x="390" y="3038" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="boyfriend woosh0013" x="780" y="3038" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="boyfriend woosh0014" x="0" y="3038" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
 </TextureAtlas>

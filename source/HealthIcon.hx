@@ -21,6 +21,7 @@ class HealthIcon extends FlxSprite
 		animation.add('bf-christmas', [0, 1], 0, false, isPlayer);
 		animation.add('bf-pixel', [21, 21], 0, false, isPlayer);
 		animation.add('bf-dark', [0, 1], 0, false, isPlayer);
+		animation.add('bf-noon', [0, 1], 0, false, isPlayer);
 		animation.add('spooky', [2, 3], 0, false, isPlayer);
 		animation.add('pico', [4, 5], 0, false, isPlayer);
 		animation.add('mom', [6, 7], 0, false, isPlayer);
@@ -44,11 +45,22 @@ class HealthIcon extends FlxSprite
 		animation.add('baphie-happy', [28, 29], 0, false, isPlayer);
 		animation.add('baphie-joy', [30, 31], 0, false, isPlayer);
 		animation.add('baphie-sad', [32, 33], 0, false, isPlayer);
+		animation.add('corn', [34, 35], 0, false, isPlayer);
+		animation.add('corn-noon', [34, 35], 0, false, isPlayer);
+		animation.add('corn-dark', [34, 35], 0, false, isPlayer);
+		animation.add('bf-mean', [36, 37], 0, false, isPlayer);
+		animation.add('cinnabar', [38, 39], 0, false, isPlayer);
+		animation.add('cinnamad', [40, 39], 0, false, isPlayer);
+		animation.add('baphie-headbutt', [41, 42], 0, false, isPlayer);
+		animation.add('baphie-ded', [25, 25], 0, false, isPlayer);
+		animation.add('bf-pixelold', [43, 43], 0, false, isPlayer);
+		animation.add('bf-pixelmean', [44, 44], 0, false, isPlayer);
+		animation.add('idle-cinnabar', [45, 45], 0, false, isPlayer);
 		animation.play(char);
 
 		switch(char)
 		{
-			case 'bf-pixel' | 'senpai' | 'senpai-angry' | 'spirit' | 'gf-pixel':
+			case 'bf-pixel' | 'senpai' | 'senpai-angry' | 'spirit' | 'gf-pixel' | 'bf-pixelold' | 'bf-pixelmean':
 				antialiasing = false;
 		}
 

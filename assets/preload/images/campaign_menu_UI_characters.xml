@@ -196,4 +196,106 @@
 	<SubTexture name="goated0035" x="998" y="4087" width="499" height="500" frameX="0" frameY="0" frameWidth="499" frameHeight="500"/>
 	<SubTexture name="goated0036" x="499" y="4087" width="499" height="500" frameX="0" frameY="0" frameWidth="499" frameHeight="500"/>
 	<SubTexture name="goated0037" x="499" y="4087" width="499" height="500" frameX="0" frameY="0" frameWidth="499" frameHeight="500"/>
+	<SubTexture name="corne0000" x="0" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0001" x="1000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0002" x="2000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0003" x="2000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0004" x="3000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0005" x="3000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0006" x="3000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0007" x="4000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0008" x="4000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0009" x="4000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0010" x="3000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0011" x="3000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0012" x="3000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0013" x="2000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0014" x="2000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0015" x="1000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0016" x="0" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0017" x="5000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0018" x="6000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0019" x="6000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0020" x="7000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0021" x="7000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0022" x="7000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0023" x="0" y="9200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0024" x="0" y="9200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0025" x="0" y="9200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0026" x="7000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0027" x="7000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0028" x="7000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0029" x="6000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0030" x="6000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="corne0031" x="5000" y="8200" width="1000" height="1000" frameX="0" frameY="0" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="NeonBF HEY!!0000" x="0" y="7652" width="395" height="416" frameX="0" frameY="0" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0001" x="0" y="7652" width="395" height="416" frameX="0" frameY="0" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0002" x="405" y="7652" width="413" height="410" frameX="-1" frameY="-8" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0003" x="405" y="7652" width="413" height="410" frameX="-1" frameY="-8" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0004" x="828" y="7652" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0005" x="828" y="7652" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0006" x="828" y="7652" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0007" x="828" y="7652" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0008" x="828" y="7652" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0009" x="828" y="7652" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0010" x="828" y="7652" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0011" x="828" y="7652" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0012" x="828" y="7652" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0013" x="828" y="7652" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0014" x="828" y="7652" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0015" x="828" y="7652" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0016" x="828" y="7652" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0017" x="828" y="7652" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0018" x="828" y="7652" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0019" x="828" y="7652" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0020" x="828" y="7652" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0021" x="828" y="7652" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0022" x="828" y="7652" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0023" x="828" y="7652" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0024" x="828" y="7652" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF HEY!!0025" x="828" y="7652" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="NeonBF idle dance white0000" x="1252" y="7652" width="406" height="392" frameX="-1" frameY="-20" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="NeonBF idle dance white0001" x="1252" y="7652" width="406" height="392" frameX="-1" frameY="-20" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="NeonBF idle dance white0002" x="1668" y="7652" width="408" height="393" frameX="0" frameY="-19" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="NeonBF idle dance white0003" x="1668" y="7652" width="408" height="393" frameX="0" frameY="-19" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="NeonBF idle dance white0004" x="2086" y="7652" width="405" height="398" frameX="-3" frameY="-14" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="NeonBF idle dance white0005" x="2086" y="7652" width="405" height="398" frameX="-3" frameY="-14" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="NeonBF idle dance white0006" x="2501" y="7652" width="410" height="411" frameX="-1" frameY="-1" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="NeonBF idle dance white0007" x="2501" y="7652" width="410" height="411" frameX="-1" frameY="-1" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="NeonBF idle dance white0008" x="2921" y="7652" width="408" height="412" frameX="-2" frameY="0" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="NeonBF idle dance white0009" x="2921" y="7652" width="408" height="412" frameX="-2" frameY="0" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="NeonBF idle dance white0010" x="2921" y="7652" width="408" height="412" frameX="-2" frameY="0" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="NeonBF idle dance white0011" x="2921" y="7652" width="408" height="412" frameX="-2" frameY="0" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="NeonBF idle dance white0012" x="2921" y="7652" width="408" height="412" frameX="-2" frameY="0" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="NeonBF idle dance white0013" x="2921" y="7652" width="408" height="412" frameX="-2" frameY="0" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0000" x="5932" y="5400" width="699" height="634" frameX="-2" frameY="-14" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0001" x="6641" y="5400" width="703" height="634" frameX="0" frameY="-14" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0002" x="7354" y="5400" width="703" height="632" frameX="0" frameY="-16" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0003" x="0" y="6177" width="699" height="632" frameX="-2" frameY="-16" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0004" x="709" y="6177" width="699" height="635" frameX="-2" frameY="-13" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0005" x="1418" y="6177" width="699" height="635" frameX="-2" frameY="-13" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0006" x="2127" y="6177" width="699" height="637" frameX="-2" frameY="-11" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0007" x="2836" y="6177" width="699" height="648" frameX="-2" frameY="0" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0008" x="2836" y="6177" width="699" height="648" frameX="-2" frameY="0" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0009" x="2836" y="6177" width="699" height="648" frameX="-2" frameY="0" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0010" x="3545" y="6177" width="699" height="648" frameX="-2" frameY="0" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0011" x="3545" y="6177" width="699" height="648" frameX="-2" frameY="0" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0012" x="3545" y="6177" width="699" height="648" frameX="-2" frameY="0" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0013" x="4254" y="6177" width="699" height="648" frameX="-2" frameY="0" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0014" x="4254" y="6177" width="699" height="648" frameX="-2" frameY="0" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0015" x="4963" y="6177" width="699" height="636" frameX="-2" frameY="-12" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0016" x="5672" y="6177" width="703" height="636" frameX="0" frameY="-12" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0017" x="6385" y="6177" width="703" height="636" frameX="0" frameY="-12" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0018" x="7098" y="6177" width="699" height="636" frameX="-2" frameY="-12" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0019" x="0" y="6835" width="699" height="637" frameX="-2" frameY="-11" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0020" x="709" y="6835" width="699" height="637" frameX="-2" frameY="-11" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0021" x="1418" y="6835" width="699" height="638" frameX="-2" frameY="-10" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0022" x="2127" y="6835" width="699" height="643" frameX="-2" frameY="-5" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0023" x="2127" y="6835" width="699" height="643" frameX="-2" frameY="-5" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0024" x="2127" y="6835" width="699" height="643" frameX="-2" frameY="-5" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0025" x="2836" y="6835" width="699" height="642" frameX="-2" frameY="-6" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0026" x="2836" y="6835" width="699" height="642" frameX="-2" frameY="-6" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0027" x="2836" y="6835" width="699" height="642" frameX="-2" frameY="-6" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0028" x="3545" y="6835" width="699" height="642" frameX="-2" frameY="-6" frameWidth="703" frameHeight="648"/>
+	<SubTexture name="NeonGF Dancing Beat WHITE0029" x="3545" y="6835" width="699" height="642" frameX="-2" frameY="-6" frameWidth="703" frameHeight="648"/>
 </TextureAtlas>

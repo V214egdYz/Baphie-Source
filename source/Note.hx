@@ -28,6 +28,7 @@ class Note extends FlxSprite
 	public var isSustainNote:Bool = false;
 
 	public var noteScore:Float = 1;
+	public var noteType:Int = 0;
 
 	public static var swagWidth:Float = 160 * 0.7;
 	public static var PURP_NOTE:Int = 0;
@@ -36,16 +37,22 @@ class Note extends FlxSprite
 	public static var RED_NOTE:Int = 3;
 	public static var DEV_NOTE:Int = 4;
 	public static var DEM_NOTE:Int = 5;
+	public static var ALT_NOTE1:Int = 6;
+	public static var ALT_NOTE2:Int = 7;
+	public static var ALT_NOTE3:Int = 8;
+	public static var ALT_NOTE4:Int = 9;
+	public static var STAR_NOTE:Int = 10;
 
 	public var rating:String = "shit";
 
-	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false)
+	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?noteType:Int = 0)
 	{
 		super();
 
 		if (prevNote == null)
 			prevNote = this;
 
+		this.noteType = noteType;
 		this.prevNote = prevNote;
 		isSustainNote = sustainNote;
 
@@ -56,6 +63,10 @@ class Note extends FlxSprite
 
 		if (this.strumTime < 0 )
 			this.strumTime = 0;
+
+		
+
+			
 
 		this.noteData = noteData;
 
@@ -97,6 +108,11 @@ class Note extends FlxSprite
 				animation.addByPrefix('purpleScroll', 'purple0');
 				animation.addByPrefix('devilScroll', 'devil0');
 				animation.addByPrefix('demonScroll', 'demon0');
+				animation.addByPrefix('ALTbScroll', 'ALTb0');
+				animation.addByPrefix('ALTaScroll', 'ALTa0');
+				animation.addByPrefix('ALTcScroll', 'ALTc0');
+				animation.addByPrefix('ALTdScroll', 'ALTd0');
+				animation.addByPrefix('starScroll', 'star0');
 
 				animation.addByPrefix('purpleholdend', 'pruple end hold');
 				animation.addByPrefix('greenholdend', 'green hold end');
@@ -104,6 +120,11 @@ class Note extends FlxSprite
 				animation.addByPrefix('blueholdend', 'blue hold end');
 				animation.addByPrefix('devilholdend', 'devil hold end');
 				animation.addByPrefix('demonholdend', 'demon hold end');
+				animation.addByPrefix('ALTdholdend', 'ALTd end hold');
+				animation.addByPrefix('ALTbholdend', 'ALTb hold end');
+				animation.addByPrefix('ALTaholdend', 'ALTa hold end');
+				animation.addByPrefix('ALTcholdend', 'ALTc hold end');
+				animation.addByPrefix('starholdend', 'star hold end');
 
 				animation.addByPrefix('purplehold', 'purple hold piece');
 				animation.addByPrefix('greenhold', 'green hold piece');
@@ -111,26 +132,89 @@ class Note extends FlxSprite
 				animation.addByPrefix('bluehold', 'blue hold piece');
 				animation.addByPrefix('devilhold', 'devil hold piece');
 				animation.addByPrefix('demonhold', 'demon hold piece');
+				animation.addByPrefix('ALTdhold', 'ALTd hold piece');
+				animation.addByPrefix('ALTbhold', 'ALTb hold piece');
+				animation.addByPrefix('ALTahold', 'ALTa hold piece');
+				animation.addByPrefix('ALTchold', 'ALTc hold piece');
+				animation.addByPrefix('starhold', 'star hold piece');
+
+				switch (noteType)
+					{
+						case 1:
+							animation.addByPrefix('greenScroll', 'targetUP');
+							animation.addByPrefix('redScroll', 'targetRIGHT');
+							animation.addByPrefix('blueScroll', 'targetDOWN');
+							animation.addByPrefix('purpleScroll', 'targetLEFT');
+							animation.addByPrefix('devilScroll', 'targetDEVIL');
+							animation.addByPrefix('demonScroll', 'targetDEMON');
+							animation.addByPrefix('ALTbScroll', 'targetALTb');
+							animation.addByPrefix('ALTaScroll', 'targetALTa');
+							animation.addByPrefix('ALTcScroll', 'targetALTc');
+							animation.addByPrefix('ALTdScroll', 'targetALTd');
+							animation.addByPrefix('starScroll', 'targetSTAR');
+						case 2:
+							animation.addByPrefix('greenScroll', 'bulletUP');
+							animation.addByPrefix('redScroll', 'bulletRIGHT');
+							animation.addByPrefix('blueScroll', 'bulletDOWN');
+							animation.addByPrefix('purpleScroll', 'bulletLEFT');
+							animation.addByPrefix('devilScroll', 'bulletDEVIL');
+							animation.addByPrefix('demonScroll', 'bulletDEMON');
+							animation.addByPrefix('ALTbScroll', 'bulletALTb');
+							animation.addByPrefix('ALTaScroll', 'bulletALTa');
+							animation.addByPrefix('ALTcScroll', 'bulletALTc');
+							animation.addByPrefix('ALTdScroll', 'bulletALTd');
+							animation.addByPrefix('starScroll', 'bulletSTAR');
+					}
 
 				switch (PlayState.SONG.song.toLowerCase())
 				{
-					case 'kanashi yagi':
-						setGraphicSize(Std.int(width * 0.6));
+					case 'multi test':
+						swagWidth = 100 * 0.7;
+						setGraphicSize(Std.int(width * 0.55));
+						updateHitbox();
+						antialiasing = true;
+					case 'seven':
+						swagWidth = 110 * 0.7;
+						setGraphicSize(Std.int(width * 0.58));
 						updateHitbox();
 						antialiasing = true;
 					case 'headbutt':
+						swagWidth = 110 * 0.7;
+						setGraphicSize(Std.int(width * 0.58));
+						updateHitbox();
+						antialiasing = true;
+					case 'kanashi yagi':
+						swagWidth = 120 * 0.7;
+						setGraphicSize(Std.int(width * 0.6));
+						updateHitbox();
+						antialiasing = true;
+					case 'erect bleatings':
+						swagWidth = 120 * 0.7;
+						setGraphicSize(Std.int(width * 0.6));
+						updateHitbox();
+						antialiasing = true;
+					case 'old headbutt':
+						swagWidth = 120 * 0.7;
+						setGraphicSize(Std.int(width * 0.6));
+						updateHitbox();
+						antialiasing = true;
+					case 'headbutt unnerfed':
+						swagWidth = 120 * 0.7;
 						setGraphicSize(Std.int(width * 0.6));
 						updateHitbox();
 						antialiasing = true;
 					case 'happy capri':
+						swagWidth = 120 * 0.7;
 						setGraphicSize(Std.int(width * 0.6));
 						updateHitbox();
 						antialiasing = true;
 					case 'goat test':
+						swagWidth = 120 * 0.7;
 						setGraphicSize(Std.int(width * 0.6));
 						updateHitbox();
 						antialiasing = true;
 					default:
+						swagWidth = 160 * 0.7;
 						setGraphicSize(Std.int(width * 0.7));
 						updateHitbox();
 						antialiasing = true;
@@ -138,6 +222,34 @@ class Note extends FlxSprite
 		}
 		switch (PlayState.SONG.song.toLowerCase())
 		{
+			case 'multi test':
+				switch (noteData)
+				{
+					case 0:
+						x += swagWidth * 0;
+						animation.play('purpleScroll');
+					case 1:
+						x += swagWidth * 1;
+						animation.play('blueScroll');
+					case 2:
+						x += swagWidth * 2;
+						animation.play('greenScroll');
+					case 3:
+						x += swagWidth * 3;
+						animation.play('redScroll');
+					case 4:
+						x += swagWidth * 4;
+						animation.play('ALTdScroll');
+					case 5:
+						x += swagWidth * 5;
+						animation.play('ALTcScroll');
+					case 6:
+						x += swagWidth * 6;
+						animation.play('ALTbScroll');
+					case 7:
+						x += swagWidth * 7;
+						animation.play('ALTaScroll');
+				}
 			case 'kanashi yagi':
 			switch (noteData)
 			{
@@ -145,19 +257,63 @@ class Note extends FlxSprite
 					x += swagWidth * 0;
 					animation.play('devilScroll');
 				case 1:
-					x += swagWidth * .75;
+					x += swagWidth * 1;
 					animation.play('purpleScroll');
 				case 2:
-					x += swagWidth * 1.5;
+					x += swagWidth * 2;
 					animation.play('blueScroll');
 				case 3:
-					x += swagWidth * 2.25;
+					x += swagWidth * 3;
 					animation.play('greenScroll');
 				case 4:
-					x += swagWidth * 3;
+					x += swagWidth * 4;
 					animation.play('redScroll');
 				case 5:
-					x += swagWidth * 3.75;
+					x += swagWidth * 5;
+					animation.play('demonScroll');
+			}
+			case 'erect bleatings':
+			switch (noteData)
+			{
+				case 0:
+					x += swagWidth * 0;
+					animation.play('devilScroll');
+				case 1:
+					x += swagWidth * 1;
+					animation.play('purpleScroll');
+				case 2:
+					x += swagWidth * 2;
+					animation.play('blueScroll');
+				case 3:
+					x += swagWidth * 3;
+					animation.play('greenScroll');
+				case 4:
+					x += swagWidth * 4;
+					animation.play('redScroll');
+				case 5:
+					x += swagWidth * 5;
+					animation.play('demonScroll');
+			}
+			case 'old headbutt':
+			switch (noteData)
+			{
+				case 0:
+					x += swagWidth * 0;
+					animation.play('devilScroll');
+				case 1:
+					x += swagWidth * 1;
+					animation.play('purpleScroll');
+				case 2:
+					x += swagWidth * 2;
+					animation.play('blueScroll');
+				case 3:
+					x += swagWidth * 3;
+					animation.play('greenScroll');
+				case 4:
+					x += swagWidth * 4;
+					animation.play('redScroll');
+				case 5:
+					x += swagWidth * 5;
 					animation.play('demonScroll');
 			}
 			case 'headbutt':
@@ -167,19 +323,69 @@ class Note extends FlxSprite
 					x += swagWidth * 0;
 					animation.play('devilScroll');
 				case 1:
-					x += swagWidth * .75;
+					x += swagWidth * 1;
 					animation.play('purpleScroll');
 				case 2:
-					x += swagWidth * 1.5;
+					x += swagWidth * 2;
 					animation.play('blueScroll');
 				case 3:
-					x += swagWidth * 2.25;
+					x += swagWidth * 3;
+					animation.play('starScroll');
+				case 4:
+					x += swagWidth * 4;
+					animation.play('greenScroll');
+				case 5:
+					x += swagWidth * 5;
+					animation.play('redScroll');
+				case 6:
+					x += swagWidth * 6;
+					animation.play('demonScroll');
+			}
+			case 'seven':
+			switch (noteData)
+			{
+				case 0:
+					x += swagWidth * 0;
+					animation.play('devilScroll');
+				case 1:
+					x += swagWidth * 1;
+					animation.play('purpleScroll');
+				case 2:
+					x += swagWidth * 2;
+					animation.play('blueScroll');
+				case 3:
+					x += swagWidth * 3;
+					animation.play('starScroll');
+				case 4:
+					x += swagWidth * 4;
+					animation.play('greenScroll');
+				case 5:
+					x += swagWidth * 5;
+					animation.play('redScroll');
+				case 6:
+					x += swagWidth * 6;
+					animation.play('demonScroll');
+			}
+			case 'headbutt unnerfed':
+			switch (noteData)
+			{
+				case 0:
+					x += swagWidth * 0;
+					animation.play('devilScroll');
+				case 1:
+					x += swagWidth * 1;
+					animation.play('purpleScroll');
+				case 2:
+					x += swagWidth * 2;
+					animation.play('blueScroll');
+				case 3:
+					x += swagWidth * 3;
 					animation.play('greenScroll');
 				case 4:
-					x += swagWidth * 3;
+					x += swagWidth * 4;
 					animation.play('redScroll');
 				case 5:
-					x += swagWidth * 3.75;
+					x += swagWidth * 5;
 					animation.play('demonScroll');
 			}
 			case 'happy capri':
@@ -189,19 +395,19 @@ class Note extends FlxSprite
 					x += swagWidth * 0;
 					animation.play('devilScroll');
 				case 1:
-					x += swagWidth * .75;
+					x += swagWidth * 1;
 					animation.play('purpleScroll');
 				case 2:
-					x += swagWidth * 1.5;
+					x += swagWidth * 2;
 					animation.play('blueScroll');
 				case 3:
-					x += swagWidth * 2.25;
+					x += swagWidth * 3;
 					animation.play('greenScroll');
 				case 4:
-					x += swagWidth * 3;
+					x += swagWidth * 4;
 					animation.play('redScroll');
 				case 5:
-					x += swagWidth * 3.75;
+					x += swagWidth * 5;
 					animation.play('demonScroll');
 			}
 			case 'goat test':
@@ -211,19 +417,19 @@ class Note extends FlxSprite
 					x += swagWidth * 0;
 					animation.play('devilScroll');
 				case 1:
-					x += swagWidth * .75;
+					x += swagWidth * 1;
 					animation.play('purpleScroll');
 				case 2:
-					x += swagWidth * 1.5;
+					x += swagWidth * 2;
 					animation.play('blueScroll');
 				case 3:
-					x += swagWidth * 2.25;
+					x += swagWidth * 3;
 					animation.play('greenScroll');
 				case 4:
-					x += swagWidth * 3;
+					x += swagWidth * 4;
 					animation.play('redScroll');
 				case 5:
-					x += swagWidth * 3.75;
+					x += swagWidth * 5;
 					animation.play('demonScroll');
 			}
 		default:
@@ -261,6 +467,26 @@ class Note extends FlxSprite
 
 		switch (PlayState.SONG.song.toLowerCase())
 		{
+			case 'multi test':
+			switch (noteData)
+			{
+				case 0:
+					animation.play('purpleholdend');
+				case 1:
+					animation.play('blueholdend');
+				case 2:
+					animation.play('greenholdend');
+				case 3:
+					animation.play('redholdend');
+				case 4:
+					animation.play('ALTdholdend');
+				case 5:
+					animation.play('ALTcholdend');
+				case 6:
+					animation.play('ALTbholdend');
+				case 7:
+					animation.play('ALTaholdend');
+			}
 			case 'kanashi yagi':
 			switch (noteData)
 			{
@@ -277,7 +503,75 @@ class Note extends FlxSprite
 				case 5:
 					animation.play('demonholdend');
 			}
+			case 'erect bleatings':
+			switch (noteData)
+			{
+				case 3:
+					animation.play('greenholdend');
+				case 4:
+					animation.play('redholdend');
+				case 2:
+					animation.play('blueholdend');
+				case 1:
+					animation.play('purpleholdend');
+				case 0:
+					animation.play('devilholdend');
+				case 5:
+					animation.play('demonholdend');
+			}
+			case 'old headbutt':
+			switch (noteData)
+			{
+				case 3:
+					animation.play('greenholdend');
+				case 4:
+					animation.play('redholdend');
+				case 2:
+					animation.play('blueholdend');
+				case 1:
+					animation.play('purpleholdend');
+				case 0:
+					animation.play('devilholdend');
+				case 5:
+					animation.play('demonholdend');
+			}
 			case 'headbutt':
+			switch (noteData)
+			{
+				case 4:
+					animation.play('greenholdend');
+				case 5:
+					animation.play('redholdend');
+				case 2:
+					animation.play('blueholdend');
+				case 1:
+					animation.play('purpleholdend');
+				case 0:
+					animation.play('devilholdend');
+				case 6:
+					animation.play('demonholdend');
+				case 3:
+					animation.play('starholdend');
+			}
+			case 'seven':
+			switch (noteData)
+			{
+				case 4:
+					animation.play('greenholdend');
+				case 5:
+					animation.play('redholdend');
+				case 2:
+					animation.play('blueholdend');
+				case 1:
+					animation.play('purpleholdend');
+				case 0:
+					animation.play('devilholdend');
+				case 6:
+					animation.play('demonholdend');
+				case 3:
+					animation.play('starholdend');
+			}
+			case 'headbutt unnerfed':
 			switch (noteData)
 			{
 				case 3:
@@ -350,6 +644,26 @@ class Note extends FlxSprite
 			{
 				switch (PlayState.SONG.song.toLowerCase())
 				{
+					case 'multi test':
+					switch (prevNote.noteData)
+					{
+						case 0:
+							prevNote.animation.play('purplehold');
+						case 1:
+							prevNote.animation.play('bluehold');
+						case 2:
+							prevNote.animation.play('greenhold');
+						case 3:
+							prevNote.animation.play('redhold');
+						case 4:
+							prevNote.animation.play('ALTdhold');
+						case 5:
+							prevNote.animation.play('ALTchold');
+						case 6:
+							prevNote.animation.play('ALTbhold');
+						case 7:
+							prevNote.animation.play('ALTahold');
+					}
 					case 'kanashi yagi':
 					switch (prevNote.noteData)
 					{
@@ -366,7 +680,75 @@ class Note extends FlxSprite
 						case 5:
 							prevNote.animation.play('demonhold');
 					}
+					case 'erect bleatings':
+					switch (prevNote.noteData)
+					{
+						case 0:
+							prevNote.animation.play('devilhold');
+						case 1:
+							prevNote.animation.play('purplehold');
+						case 2:
+							prevNote.animation.play('bluehold');
+						case 3:
+							prevNote.animation.play('greenhold');
+						case 4:
+							prevNote.animation.play('redhold');
+						case 5:
+							prevNote.animation.play('demonhold');
+					}
+					case 'old headbutt':
+					switch (prevNote.noteData)
+					{
+						case 0:
+							prevNote.animation.play('devilhold');
+						case 1:
+							prevNote.animation.play('purplehold');
+						case 2:
+							prevNote.animation.play('bluehold');
+						case 3:
+							prevNote.animation.play('greenhold');
+						case 4:
+							prevNote.animation.play('redhold');
+						case 5:
+							prevNote.animation.play('demonhold');
+					}
+					case 'seven':
+					switch (prevNote.noteData)
+					{
+						case 0:
+							prevNote.animation.play('devilhold');
+						case 1:
+							prevNote.animation.play('purplehold');
+						case 2:
+							prevNote.animation.play('bluehold');
+						case 4:
+							prevNote.animation.play('greenhold');
+						case 5:
+							prevNote.animation.play('redhold');
+						case 6:
+							prevNote.animation.play('demonhold');
+						case 3:
+							prevNote.animation.play('starhold');
+					}
 					case 'headbutt':
+					switch (prevNote.noteData)
+					{
+						case 0:
+							prevNote.animation.play('devilhold');
+						case 1:
+							prevNote.animation.play('purplehold');
+						case 2:
+							prevNote.animation.play('bluehold');
+						case 4:
+							prevNote.animation.play('greenhold');
+						case 5:
+							prevNote.animation.play('redhold');
+						case 6:
+							prevNote.animation.play('demonhold');
+						case 3:
+							prevNote.animation.play('starhold');
+					}
+					case 'headbutt unnerfed':
 					switch (prevNote.noteData)
 					{
 						case 0:
@@ -446,15 +828,28 @@ class Note extends FlxSprite
 
 		if (mustPress)
 		{
+			if (noteType != 1)
+				{
 			// The * 0.5 is so that it's easier to hit them too late, instead of too early
 			if (strumTime > Conductor.songPosition - (Conductor.safeZoneOffset * 1.5)
 				&& strumTime < Conductor.songPosition + (Conductor.safeZoneOffset * 0.5))
 				canBeHit = true;
 			else
 				canBeHit = false;
+				}
+				else
+					{
+						if (strumTime > Conductor.songPosition - (Conductor.safeZoneOffset * 0.6)
+							&& strumTime < Conductor.songPosition + (Conductor.safeZoneOffset * 0.4))
+							canBeHit = true;
+						else
+							canBeHit = false;
+					}
 
 			if (strumTime < Conductor.songPosition - Conductor.safeZoneOffset * Conductor.timeScale && !wasGoodHit)
 				tooLate = true;
+				
+
 		}
 		else
 		{

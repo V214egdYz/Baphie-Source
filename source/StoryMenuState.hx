@@ -31,11 +31,13 @@ class StoryMenuState extends MusicBeatState
 		['Satin Panties', "High", "Milf"],
 		['Cocoa', 'Eggnog', 'Winter Horrorland'],
 		['Senpai', 'Roses', 'Thorns'],
-		['Bleatings']
+		['Bleatings'],
+		['Corncob', 'Cornstalk', 'Cornfield'],
+		['Cinnabar', 'Bejeweled', 'Shellshock']
 	];
 	var curDifficulty:Int = 1;
 
-	public static var weekUnlocked:Array<Bool> = [true, true, true, true, true, true, true, true];
+	public static var weekUnlocked:Array<Bool> = [true, true, true, true, true, true, true, true, true, true];
 
 	var weekCharacters:Array<Dynamic> = [
 		['', 'bf', 'gf'],
@@ -45,7 +47,9 @@ class StoryMenuState extends MusicBeatState
 		['mom', 'bf', 'gf'],
 		['parents-christmas', 'bf', 'gf'],
 		['senpai', 'bf', 'gf'],
-		['baphie', 'bf', 'gf']
+		['baphie', 'bf', 'gf'],
+		['cornelius', 'bf', 'gf'],
+		['', 'bf-neon', 'gf-neon']
 	];
 
 	var weekNames:Array<String> = [
@@ -56,7 +60,48 @@ class StoryMenuState extends MusicBeatState
 		"MOMMY MUST MURDER",
 		"RED SNOW",
 		"Hating Simulator ft. Moawling",
-		"Starlit Singing"
+		"Starlit Singing",
+		"Corny Tunes",
+		"Gem Jam"
+	];
+
+	var weekColors:Array<String> = [
+		"0xFFF9CF51",
+		"0xFFF9CF51",
+		"0xFFF9CF51",
+		"0xFFF9CF51",
+		"0xFFF9CF51",
+		"0xFFF9CF51",
+		"0xFFF9CF51",
+		"0xFFB30C30",
+		"0xFF0D8032",
+		"0xFF000000"
+	];
+
+	var warnAlpha:Array<String> = [
+		"0",
+		"0",
+		"0",
+		"0",
+		"0",
+		"0",
+		"0",
+		"0",
+		"1",
+		"0"
+	];
+
+	var baphAlpha:Array<String> = [
+		"0",
+		"0",
+		"0",
+		"0",
+		"0",
+		"0",
+		"0",
+		"1",
+		"0",
+		"0"
 	];
 
 	var txtWeekTitle:FlxText;
@@ -70,10 +115,15 @@ class StoryMenuState extends MusicBeatState
 
 	var grpLocks:FlxTypedGroup<FlxSprite>;
 
+	var BG:FlxSprite = new FlxSprite(0, 56).makeGraphic(FlxG.width, 400, 0xFFFFFFFF);
+
 	var difficultySelectors:FlxGroup;
 	var sprDifficulty:FlxSprite;
 	var leftArrow:FlxSprite;
 	var rightArrow:FlxSprite;
+	var warning:FlxSprite;
+	var baphSongs:FlxSprite;
+	var notice:FlxSprite;
 
 	override function create()
 	{
@@ -100,6 +150,8 @@ class StoryMenuState extends MusicBeatState
 		txtWeekTitle.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, RIGHT);
 		txtWeekTitle.alpha = 0.7;
 
+		BG.color = 0xFFF9CF51;
+
 		var rankText:FlxText = new FlxText(0, 10);
 		rankText.text = 'RANK: GREAT';
 		rankText.setFormat(Paths.font("vcr.ttf"), 32);
@@ -107,7 +159,6 @@ class StoryMenuState extends MusicBeatState
 		rankText.screenCenter(X);
 
 		var ui_tex = Paths.getSparrowAtlas('campaign_menu_UI_assets');
-		var yellowBG:FlxSprite = new FlxSprite(0, 56).makeGraphic(FlxG.width, 400, 0xFFB30C30);
 
 		grpWeekText = new FlxTypedGroup<MenuItem>();
 		add(grpWeekText);
@@ -124,7 +175,7 @@ class StoryMenuState extends MusicBeatState
 
 		for (i in 0...weekData.length)
 		{
-			var weekThing:MenuItem = new MenuItem(0, yellowBG.y + yellowBG.height + 10, i);
+			var weekThing:MenuItem = new MenuItem(0, BG.y + BG.height + 10, i);
 			weekThing.y += ((weekThing.height + 20) * i);
 			weekThing.targetY = i;
 			grpWeekText.add(weekThing);
@@ -172,6 +223,24 @@ class StoryMenuState extends MusicBeatState
 		sprDifficulty.animation.play('easy');
 		changeDifficulty();
 
+		warning = new FlxSprite(leftArrow.x - 40, leftArrow.y + 10).loadGraphic(Paths.image('warning'));
+		warning.scale.set(0.6, 0.6);
+		warning.alpha = 0;
+		warning.antialiasing = true;
+		add(warning);
+
+		baphSongs = new FlxSprite((FlxG.width * 0.05) - 20, leftArrow.y + 98).loadGraphic(Paths.image('baphWeek'));
+		baphSongs.scale.set(0.75, 0.75);
+		baphSongs.antialiasing = true;
+		baphSongs.alpha = 0;
+		add(baphSongs);
+
+		notice = new FlxSprite(leftArrow.x - 40, leftArrow.y - 25).loadGraphic(Paths.image('baphNotice'));
+		notice.scale.set(0.6, 0.6);
+		notice.alpha = 0;
+		notice.antialiasing = true;
+		add(notice);
+
 		difficultySelectors.add(sprDifficulty);
 
 		rightArrow = new FlxSprite(sprDifficulty.x + sprDifficulty.width + 50, leftArrow.y);
@@ -183,10 +252,10 @@ class StoryMenuState extends MusicBeatState
 
 		trace("Line 150");
 
-		add(yellowBG);
+		add(BG);
 		add(grpWeekCharacters);
 
-		txtTracklist = new FlxText(FlxG.width * 0.05, yellowBG.x + yellowBG.height + 100, 0, "Tracks", 32);
+		txtTracklist = new FlxText(FlxG.width * 0.05, BG.x + BG.height + 100, 0, "Tracks", 32);
 		txtTracklist.alignment = CENTER;
 		txtTracklist.font = rankText.font;
 		txtTracklist.color = 0xFFe55777;
@@ -280,7 +349,10 @@ class StoryMenuState extends MusicBeatState
 				FlxG.sound.play(Paths.sound('confirmMenu'));
 
 				grpWeekText.members[curWeek].startFlashing();
-				grpWeekCharacters.members[1].animation.play('bfConfirm');
+				if (curWeek == 9)
+					grpWeekCharacters.members[1].animation.play('bf-neonConfirm');
+				else
+					grpWeekCharacters.members[1].animation.play('bfConfirm');
 				stopspamming = true;
 			}
 
@@ -370,6 +442,15 @@ class StoryMenuState extends MusicBeatState
 				item.alpha = 0.6;
 			bullShit++;
 		}
+
+		if (FlxColor.fromString(weekColors[curWeek]) != 0x00000000 || weekColors[curWeek] != null)
+			BG.color = FlxColor.fromString(weekColors[curWeek]);
+		else
+			BG.color = 0xFFF9CF51;
+
+		warning.alpha = Std.parseInt(warnAlpha[curWeek]);
+		notice.alpha = Std.parseInt(baphAlpha[curWeek]);
+		baphSongs.alpha = Std.parseInt(baphAlpha[curWeek]);
 
 		FlxG.sound.play(Paths.sound('scrollMenu'));
 
