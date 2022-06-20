@@ -123,6 +123,48 @@ class DownscrollOption extends Option
 	}
 }
 
+class HealthLossOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.healthloss = !FlxG.save.data.healthloss;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return FlxG.save.data.healthloss ? "Fair Health Loss Input" : "Kade Health Loss Input";
+	}
+}
+
+class AntiMashOption extends Option
+{
+	public function new(desc:String)
+		{
+			super();
+			description = desc;
+		}
+
+		public override function press():Bool
+			{
+				FlxG.save.data.antimash = !FlxG.save.data.antimash;
+				display = updateDisplay();
+				return true;
+			}
+
+			private override function updateDisplay():String
+				{
+					return FlxG.save.data.antimash ? "Antimash" : "No Antimash";
+				}
+}
+
 class GhostTapOption extends Option
 {
 	public function new(desc:String)

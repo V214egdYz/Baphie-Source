@@ -8,9 +8,13 @@ class Ratings
 		if(FlxG.save.data.botplay)
 			ranking = "BotPlay";
 
-        if (PlayState.misses == 0 && PlayState.bads == 0 && PlayState.shits == 0 && PlayState.goods == 0) // Marvelous (SICK) Full Combo
+        if (PlayState.misses == 0 && PlayState.bads == 0 && PlayState.shits == 0 && PlayState.mehs == 0 && PlayState.okays == 0 && PlayState.goods == 0 && PlayState.sicks == 0 && PlayState.marvelouses == 0) // Perfect Full Combo
+            ranking = "(PFC)";
+        else if (PlayState.misses == 0 && PlayState.bads == 0 && PlayState.shits == 0 && PlayState.mehs == 0 && PlayState.okays == 0 && PlayState.goods == 0 && PlayState.sicks == 0 && PlayState.marvelouses >= 1) // TRUE Marvelous Full Combo (Nothing but Marvelouses and Perfects)
             ranking = "(MFC)";
-        else if (PlayState.misses == 0 && PlayState.bads == 0 && PlayState.shits == 0 && PlayState.goods >= 1) // Good Full Combo (Nothing but Goods & Sicks)
+        else if (PlayState.misses == 0 && PlayState.bads == 0 && PlayState.shits == 0 && PlayState.mehs == 0 && PlayState.okays == 0 && PlayState.goods == 0 && PlayState.sicks >= 1) // Marvelous (SICK) Full Combo (Nothing but Sicks, Marvelouses and Perfects)
+            ranking = "(SFC)";
+        else if (PlayState.misses == 0 && PlayState.bads == 0 && PlayState.shits == 0 && PlayState.mehs == 0 && PlayState.okays == 0 && PlayState.goods >= 1) // Good Full Combo (Nothing but Goods, Sicks, Marvelouses and Perfects)
             ranking = "(GFC)";
         else if (PlayState.misses == 0) // Regular FC
             ranking = "(FC)";
@@ -23,7 +27,7 @@ class Ratings
         else if (PlayState.misses > 999 && PlayState.misses < 10000) // Quadruple Digit Combo Breaks
             ranking = "(QdDCB)";
         else if (PlayState.misses > 9999) // WAYYY too many Combo Breaks
-            ranking = "(Got dayum)";
+            ranking = "(Jesus Christ)";
         else
             ranking = "(Clear)";
 
@@ -124,25 +128,41 @@ class Ratings
             return "shit";
         else if (noteDiff > 90 * customTimeScale) // early
             return "bad";
+        else if (noteDiff > 75 * customTimeScale) // kinda early
+            return "meh";
+        else if (noteDiff > 60 * customTimeScale) // earlyish
+            return "okay";
         else if (noteDiff > 45 * customTimeScale) // your kinda there
             return "good";
+        else if (noteDiff > 35 * customTimeScale) // sick(E)
+            return "sick";
+        else if (noteDiff > 25 * customTimeScale) // marvelous(E)
+            return "marvelous";
+        else if (noteDiff < -25 * customTimeScale) // marvelous(L)
+            return "marvelous";
+        else if (noteDiff < -35 * customTimeScale) // sick(L)
+            return "sick";
         else if (noteDiff < -45 * customTimeScale) // little late
             return "good";
+        else if (noteDiff < -60 * customTimeScale) // lateish
+            return "okay";
+        else if (noteDiff < -75 * customTimeScale) // kinda late
+            return "meh";
         else if (noteDiff < -90 * customTimeScale) // late
             return "bad";
         else if (noteDiff < -135 * customTimeScale) // late as fuck
             return "shit";
         else if (noteDiff < -166 * customTimeScale) // so god damn late its a miss
             return "miss";
-        return "sick";
+        return "perfect";
     }
 
     public static function CalculateRanking(score:Int,scoreDef:Int,nps:Int,maxNPS:Int,accuracy:Float):String
     {
         return 
-        (FlxG.save.data.npsDisplay ? "NPS: " + nps + " (Max " + maxNPS + ")" + " | Notes Hit:" + (PlayState.shits + PlayState.bads + PlayState.goods + PlayState.sicks) + (!FlxG.save.data.botplay ? " | " : "") : "") +  (!FlxG.save.data.botplay ?	// NPS Toggle
+        (FlxG.save.data.npsDisplay ? "NPS: " + nps + " (Max " + maxNPS + ")" + " | Notes Hit:" + (PlayState.shits + PlayState.bads + PlayState.mehs + PlayState.okays + PlayState.goods + PlayState.sicks + PlayState.marvelouses + PlayState.perfects) + (!FlxG.save.data.botplay ? " | " : "") : "") +  (!FlxG.save.data.botplay ?	// NPS Toggle
         "Score:" + (Conductor.safeFrames != 10 ? score + " (" + scoreDef + ")" : "" + score) + 									// Score
-        " | Combo Breaks:" + PlayState.misses + 																				// Misses/Combo Breaks                                                                                      
+        " | Misses:" + PlayState.misses + 																				// Misses/Combo Breaks                                                                                      
         " | Accuracy:" + (FlxG.save.data.botplay ? "N/A" : HelperFunctions.truncateFloat(accuracy, 2) + " %") +  				// Accuracy
         " | " + GenerateLetterRank(accuracy) : ""); 																			// Letter Rank
     }

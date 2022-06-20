@@ -59,14 +59,14 @@
 	<SubTexture name="demon hold end0000" x="1470" y="449" width="50" height="64"/>
 	<SubTexture name="devil hold piece0000" x="1520" y="449" width="50" height="44"/>
 	<SubTexture name="demon hold piece0000" x="1520" y="449" width="50" height="44"/>
-	<SubTexture name="devil press0000" x="775" y="656" width="151" height="150"/>
-	<SubTexture name="devil press0001" x="775" y="656" width="151" height="150"/>
-	<SubTexture name="devil press0002" x="1071" y="661" width="145" height="145"/>
-	<SubTexture name="devil press0003" x="1071" y="661" width="145" height="145"/>
-	<SubTexture name="demon press0000" x="624" y="656" width="151" height="150"/>
-	<SubTexture name="demon press0001" x="624" y="656" width="151" height="150"/>
-	<SubTexture name="demon press0002" x="926" y="661" width="145" height="145"/>
-	<SubTexture name="demon press0003" x="926" y="661" width="145" height="145"/>
+	<SubTexture name="devil press0000" x="1071" y="661" width="145" height="145"/>
+	<SubTexture name="devil press0001" x="1071" y="661" width="145" height="145"/>
+	<SubTexture name="devil press0002" x="775" y="656" width="151" height="150"/>
+	<SubTexture name="devil press0003" x="775" y="656" width="151" height="150"/>
+	<SubTexture name="demon press0000" x="926" y="661" width="145" height="145"/>
+	<SubTexture name="demon press0001" x="926" y="661" width="145" height="145"/>
+	<SubTexture name="demon press0002" x="624" y="656" width="151" height="150"/>
+	<SubTexture name="demon press0003" x="624" y="656" width="151" height="150"/>
 	<SubTexture name="devil confirm0000" x="642" y="806" width="321" height="321" frameX="-30" frameY="-30" frameWidth="321" frameHeight="321"/>
 	<SubTexture name="devil confirm0001" x="963" y="806" width="321" height="321" frameX="-30" frameY="-30" frameWidth="321" frameHeight="321"/>
 	<SubTexture name="devil confirm0002" x="298" y="1127" width="316" height="307" frameX="-35" frameY="-35" frameWidth="316" frameHeight="307"/>
@@ -182,10 +182,10 @@
 	<SubTexture name="star confirm0001" x="300" y="1608" width="300" height="300" frameX="-30" frameY="-30" frameWidth="300" frameHeight="300"/>
 	<SubTexture name="star confirm0002" x="600" y="1608" width="300" height="300" frameX="-35" frameY="-35" frameWidth="300" frameHeight="300"/>
 	<SubTexture name="star confirm0003" x="600" y="1608" width="300" height="300" frameX="-35" frameY="-35" frameWidth="300" frameHeight="300"/>
-	<SubTexture name="star press0000" x="1521" y="663" width="145" height="134"/>
-	<SubTexture name="star press0001" x="1521" y="663" width="145" height="134"/>
-	<SubTexture name="star press0002" x="1673" y="667" width="137" height="125"/>
-	<SubTexture name="star press0003" x="1673" y="667" width="137" height="125"/>
+	<SubTexture name="star press0000" x="1673" y="667" width="137" height="125"/>
+	<SubTexture name="star press0001" x="1673" y="667" width="137" height="125"/>
+	<SubTexture name="star press0002" x="1521" y="663" width="145" height="134"/>
+	<SubTexture name="star press0003" x="1521" y="663" width="145" height="134"/>
 	<SubTexture name="bulletSTAR0000" x="1984" y="3942" width="64" height="154"/>
 	<SubTexture name="targetSTAR0000" x="1556" y="3791" width="149" height="137"/>
 </TextureAtlas>

@@ -1,40 +1,45 @@
-Tutorial:gf:1
-Bopeebo:dad:1
-Fresh:dad:1
-Dad Battle:dad:1
-Spookeez:spooky:2
-South:spooky:2
-Monster:monster:2
-Pico:pico:3
-Philly Nice:pico:3
-Blammed:pico:3
-Satin Panties:mom:4
-High:mom:4
-Milf:mom:4
-Cocoa:parents-christmas:5
-Eggnog:parents-christmas:5
-Winter Horrorland:monster-christmas:5
-Senpai:senpai:6
-Roses:senpai:6
-Thorns:spirit:6
-Bleatings:baphie:7
-Erect Bleatings:baphie-headbutt:7
-Devilish:baphie-sheepish:7
-Angelic:baphie-happy:7
-Happy Capri:baphie-joy:7
-Kanashi Yagi:baphie-sad:7
-Headbutt:baphie-headbutt:7
-Corncob:corn:8
-Cornstalk:corn:8
-Cornfield:corn:8
-Cinnabar:idle-cinnabar:9
-Bejeweled:cinnabar:9
-Shellshock:cinnamad:9
-Painite:baphie:9
-Old Bleatings:baphie-ded:7
-Pentagrammatic:baphie-ded:7
-Candlelit:baphie-ded:7
-Old Headbutt:baphie-headbutt:7
-Headbutt Unnerfed:baphie-ded:7
-Old Shellshock:cinnamad:9
-Multi Test:senpai:9
+Tutorial:gf:1:effortless:
+Bopeebo:dad:1:effortless:
+Fresh:dad:1:easy:
+Dad Battle:dad:1:medium:
+Spookeez:spooky:2:medium:
+South:spooky:2:medium:
+Monster:monster:2:medium:
+Pico:pico:3:medium:
+Philly Nice:pico:3:medium:
+Blammed:pico:3:medium:
+Satin Panties:mom:4:medium:
+High:mom:4:medium:
+Milf:mom:4:hard:
+Cocoa:parents-christmas:5:medium:
+Eggnog:parents-christmas:5:hard:
+Winter Horrorland:monster-christmas:5:medium:
+Senpai:senpai:6:medium:
+Roses:senpai:6:hard:
+Thorns:spirit:6:hard:
+Bleatings:baphie:7:hard:
+Erect Bleatings:baphie-headbutt:7:insane:
+Devilish:baphie-sheepish:7:difficult:
+Erect Devilish:baphie-headbutt:7:terrifying:
+Angelic:baphie-happy:7:challenging:
+Happy Capri:baphie-joy:7:intense:
+Kanashi Yagi:baphie-sad:7:challenging:
+Headbutt:baphie-headbutt:7:catastrophic:
+Starblazing:baphie-headbutt:7:unreal:
+Corncob:corn:8:intense:
+Cornstalk:corn:8:remorseless:
+Cornfield:corn:8:remorseless:
+Cinnabar:idle-cinnabar:9:difficult:
+Bejeweled:cinnabar:9:remorseless:
+Shellshock:cinnamad:9:easy:
+Painite:bf:9:intense:
+Schadenfreude:bf:9:extreme:
+Bullet Hell:bf:9:easy:
+Old Bleatings:baphie-ded:7:medium:
+Pentagrammatic:baphie-ded:7:hard:
+Candlelit:baphie-ded:7:hard:
+Old Headbutt:baphie-headbutt:7:terrifying:
+Headbutt Unnerfed:baphie-ded:7:horrific:
+Old Bejeweled:idle-cinnabar:9:extreme:
+Old Shellshock:idle-cinnabar:9:terrifying:
+Original Shellshock:idle-cinnabar:9:insane:

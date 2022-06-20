@@ -108,23 +108,28 @@ class LoadReplayState extends MusicBeatState
         return week;
     }
 
-	public function addSong(songName:String, weekNum:Int, songCharacter:String)
+	public function addSong(songName:String, weekNum:Int, songCharacter:String, songDifficulty:String)
         {
-            songs.push(new FreeplayState.SongMetadata(songName, weekNum, songCharacter));
+            songs.push(new FreeplayState.SongMetadata(songName, weekNum, songCharacter, songDifficulty));
         }
     
-        public function addWeek(songs:Array<String>, weekNum:Int, ?songCharacters:Array<String>)
+        public function addWeek(songs:Array<String>, weekNum:Int, ?songCharacters:Array<String>, ?songDifficulties:Array<String>)
         {
             if (songCharacters == null)
                 songCharacters = ['bf'];
+
+			if (songDifficulties == null)
+				songDifficulties = ['easy'];
     
             var num:Int = 0;
             for (song in songs)
             {
-                addSong(song, weekNum, songCharacters[num]);
+                addSong(song, weekNum, songCharacters[num], songDifficulties[num]);
     
                 if (songCharacters.length != 1)
                     num++;
+				if (songDifficulties.length != 1)
+					num++;
             }
         }
     

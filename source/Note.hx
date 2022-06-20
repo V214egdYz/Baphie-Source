@@ -178,6 +178,16 @@ class Note extends FlxSprite
 						setGraphicSize(Std.int(width * 0.58));
 						updateHitbox();
 						antialiasing = true;
+					case 'ten':
+						swagWidth = 80 * 0.7;
+						setGraphicSize(Std.int(width * 0.45));
+						updateHitbox();
+						antialiasing = true;
+					case 'starblazing':
+						swagWidth = 80 * 0.7;
+						setGraphicSize(Std.int(width * 0.45));
+						updateHitbox();
+						antialiasing = true;
 					case 'headbutt':
 						swagWidth = 110 * 0.7;
 						setGraphicSize(Std.int(width * 0.58));
@@ -189,6 +199,11 @@ class Note extends FlxSprite
 						updateHitbox();
 						antialiasing = true;
 					case 'erect bleatings':
+						swagWidth = 120 * 0.7;
+						setGraphicSize(Std.int(width * 0.6));
+						updateHitbox();
+						antialiasing = true;
+					case 'erect devilish':
 						swagWidth = 120 * 0.7;
 						setGraphicSize(Std.int(width * 0.6));
 						updateHitbox();
@@ -294,6 +309,28 @@ class Note extends FlxSprite
 					x += swagWidth * 5;
 					animation.play('demonScroll');
 			}
+			case 'erect devilish':
+			switch (noteData)
+			{
+				case 0:
+					x += swagWidth * 0;
+					animation.play('devilScroll');
+				case 1:
+					x += swagWidth * 1;
+					animation.play('purpleScroll');
+				case 2:
+					x += swagWidth * 2;
+					animation.play('blueScroll');
+				case 3:
+					x += swagWidth * 3;
+					animation.play('greenScroll');
+				case 4:
+					x += swagWidth * 4;
+					animation.play('redScroll');
+				case 5:
+					x += swagWidth * 5;
+					animation.play('demonScroll');
+			}
 			case 'old headbutt':
 			switch (noteData)
 			{
@@ -340,6 +377,74 @@ class Note extends FlxSprite
 				case 6:
 					x += swagWidth * 6;
 					animation.play('demonScroll');
+			}
+			case 'ten':
+			switch (noteData)
+			{
+				case 0:
+					x += swagWidth * 0;
+					animation.play('ALTdScroll');
+				case 1:
+					x += swagWidth * 1;
+					animation.play('ALTcScroll');
+				case 2:
+					x += swagWidth * 2;
+					animation.play('devilScroll');
+				case 3:
+					x += swagWidth * 3;
+					animation.play('purpleScroll');
+				case 4:
+					x += swagWidth * 4;
+					animation.play('blueScroll');
+				case 5:
+					x += swagWidth * 5;
+					animation.play('greenScroll');
+				case 6:
+					x += swagWidth * 6;
+					animation.play('redScroll');
+				case 7:
+					x += swagWidth * 7;
+					animation.play('demonScroll');
+				case 8:
+					x += swagWidth * 8;
+					animation.play('ALTbScroll');
+				case 9:
+					x += swagWidth * 9;
+					animation.play('ALTaScroll');
+			}
+			case 'starblazing':
+			switch (noteData)
+			{
+				case 0:
+					x += swagWidth * 0;
+					animation.play('ALTdScroll');
+				case 1:
+					x += swagWidth * 1;
+					animation.play('ALTcScroll');
+				case 2:
+					x += swagWidth * 2;
+					animation.play('devilScroll');
+				case 3:
+					x += swagWidth * 3;
+					animation.play('purpleScroll');
+				case 4:
+					x += swagWidth * 4;
+					animation.play('blueScroll');
+				case 5:
+					x += swagWidth * 5;
+					animation.play('greenScroll');
+				case 6:
+					x += swagWidth * 6;
+					animation.play('redScroll');
+				case 7:
+					x += swagWidth * 7;
+					animation.play('demonScroll');
+				case 8:
+					x += swagWidth * 8;
+					animation.play('ALTbScroll');
+				case 9:
+					x += swagWidth * 9;
+					animation.play('ALTaScroll');
 			}
 			case 'seven':
 			switch (noteData)
@@ -519,6 +624,22 @@ class Note extends FlxSprite
 				case 5:
 					animation.play('demonholdend');
 			}
+			case 'erect devilish':
+			switch (noteData)
+			{
+				case 3:
+					animation.play('greenholdend');
+				case 4:
+					animation.play('redholdend');
+				case 2:
+					animation.play('blueholdend');
+				case 1:
+					animation.play('purpleholdend');
+				case 0:
+					animation.play('devilholdend');
+				case 5:
+					animation.play('demonholdend');
+			}
 			case 'old headbutt':
 			switch (noteData)
 			{
@@ -570,6 +691,54 @@ class Note extends FlxSprite
 					animation.play('demonholdend');
 				case 3:
 					animation.play('starholdend');
+			}
+			case 'ten':
+			switch (noteData)
+			{
+				case 5:
+					animation.play('greenholdend');
+				case 6:
+					animation.play('redholdend');
+				case 4:
+					animation.play('blueholdend');
+				case 3:
+					animation.play('purpleholdend');
+				case 2:
+					animation.play('devilholdend');
+				case 7:
+					animation.play('demonholdend');
+				case 0:
+					animation.play('ALTdholdend');
+				case 1:
+					animation.play('ALTcholdend');
+				case 8:
+					animation.play('ALTbholdend');
+				case 9:
+					animation.play('ALTaholdend');
+			}
+			case 'starblazing':
+			switch (noteData)
+			{
+				case 5:
+					animation.play('greenholdend');
+				case 6:
+					animation.play('redholdend');
+				case 4:
+					animation.play('blueholdend');
+				case 3:
+					animation.play('purpleholdend');
+				case 2:
+					animation.play('devilholdend');
+				case 7:
+					animation.play('demonholdend');
+				case 0:
+					animation.play('ALTdholdend');
+				case 1:
+					animation.play('ALTcholdend');
+				case 8:
+					animation.play('ALTbholdend');
+				case 9:
+					animation.play('ALTaholdend');
 			}
 			case 'headbutt unnerfed':
 			switch (noteData)
@@ -696,6 +865,22 @@ class Note extends FlxSprite
 						case 5:
 							prevNote.animation.play('demonhold');
 					}
+					case 'erect devilish':
+					switch (prevNote.noteData)
+					{
+						case 0:
+							prevNote.animation.play('devilhold');
+						case 1:
+							prevNote.animation.play('purplehold');
+						case 2:
+							prevNote.animation.play('bluehold');
+						case 3:
+							prevNote.animation.play('greenhold');
+						case 4:
+							prevNote.animation.play('redhold');
+						case 5:
+							prevNote.animation.play('demonhold');
+					}
 					case 'old headbutt':
 					switch (prevNote.noteData)
 					{
@@ -729,6 +914,54 @@ class Note extends FlxSprite
 							prevNote.animation.play('demonhold');
 						case 3:
 							prevNote.animation.play('starhold');
+					}
+					case 'ten':
+					switch (prevNote.noteData)
+					{
+						case 2:
+							prevNote.animation.play('devilhold');
+						case 3:
+							prevNote.animation.play('purplehold');
+						case 4:
+							prevNote.animation.play('bluehold');
+						case 5:
+							prevNote.animation.play('greenhold');
+						case 6:
+							prevNote.animation.play('redhold');
+						case 7:
+							prevNote.animation.play('demonhold');
+						case 0:
+							prevNote.animation.play('ALTdhold');
+						case 1:
+							prevNote.animation.play('ALTchold');
+						case 8:
+							prevNote.animation.play('ALTbhold');
+						case 9:
+							prevNote.animation.play('ALTahold');
+					}
+					case 'starblazing':
+					switch (prevNote.noteData)
+					{
+						case 2:
+							prevNote.animation.play('devilhold');
+						case 3:
+							prevNote.animation.play('purplehold');
+						case 4:
+							prevNote.animation.play('bluehold');
+						case 5:
+							prevNote.animation.play('greenhold');
+						case 6:
+							prevNote.animation.play('redhold');
+						case 7:
+							prevNote.animation.play('demonhold');
+						case 0:
+							prevNote.animation.play('ALTdhold');
+						case 1:
+							prevNote.animation.play('ALTchold');
+						case 8:
+							prevNote.animation.play('ALTbhold');
+						case 9:
+							prevNote.animation.play('ALTahold');
 					}
 					case 'headbutt':
 					switch (prevNote.noteData)
@@ -839,11 +1072,24 @@ class Note extends FlxSprite
 				}
 				else
 					{
-						if (strumTime > Conductor.songPosition - (Conductor.safeZoneOffset * 0.6)
-							&& strumTime < Conductor.songPosition + (Conductor.safeZoneOffset * 0.4))
+						if (!FlxG.save.data.botplay)
+							{
+						//aim note hard to hit troll
+						if (strumTime > Conductor.songPosition - (Conductor.safeZoneOffset * 0.3)
+							&& strumTime < Conductor.songPosition + (Conductor.safeZoneOffset * 0.2)) 
 							canBeHit = true;
 						else
 							canBeHit = false;
+							}
+						if (FlxG.save.data.botplay)
+							{
+						//no hitty uwu
+						if (strumTime > Conductor.songPosition - (Conductor.safeZoneOffset * 0.3)
+							&& strumTime < Conductor.songPosition + (Conductor.safeZoneOffset * 0.2)) 
+							canBeHit = false;
+						else
+							canBeHit = false;
+							}
 					}
 
 			if (strumTime < Conductor.songPosition - Conductor.safeZoneOffset * Conductor.timeScale && !wasGoodHit)

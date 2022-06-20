@@ -145,42 +145,57 @@ class ChartingState extends MusicBeatState
 				add(gridBG);
 			case 'kanashi yagi':
 				remove(gridBG);
-				GRID_SIZE = 26;
+				GRID_SIZE = 30;
 				gridBG = FlxGridOverlay.create(GRID_SIZE, GRID_SIZE, GRID_SIZE * 12, GRID_SIZE * 16);
 				add(gridBG);
 			case 'erect bleatings':
 				remove(gridBG);
-				GRID_SIZE = 26;
+				GRID_SIZE = 30;
+				gridBG = FlxGridOverlay.create(GRID_SIZE, GRID_SIZE, GRID_SIZE * 12, GRID_SIZE * 16);
+				add(gridBG);
+			case 'erect devilish':
+				remove(gridBG);
+				GRID_SIZE = 30;
 				gridBG = FlxGridOverlay.create(GRID_SIZE, GRID_SIZE, GRID_SIZE * 12, GRID_SIZE * 16);
 				add(gridBG);
 			case 'old headbutt':
 				remove(gridBG);
-				GRID_SIZE = 26;
+				GRID_SIZE = 30;
 				gridBG = FlxGridOverlay.create(GRID_SIZE, GRID_SIZE, GRID_SIZE * 12, GRID_SIZE * 16);
 				add(gridBG);
 			case 'headbutt':
 				remove(gridBG);
-				GRID_SIZE = 22;
+				GRID_SIZE = 25;
 				gridBG = FlxGridOverlay.create(GRID_SIZE, GRID_SIZE, GRID_SIZE * 14, GRID_SIZE * 16);
 				add(gridBG);
 			case 'seven':
 				remove(gridBG);
-				GRID_SIZE = 22;
+				GRID_SIZE = 25;
 				gridBG = FlxGridOverlay.create(GRID_SIZE, GRID_SIZE, GRID_SIZE * 14, GRID_SIZE * 16);
+				add(gridBG);
+			case 'ten':
+				remove(gridBG);
+				GRID_SIZE = 16;
+				gridBG = FlxGridOverlay.create(GRID_SIZE, GRID_SIZE, GRID_SIZE * 20, GRID_SIZE * 16);
+				add(gridBG);
+			case 'starblazing':
+				remove(gridBG);
+				GRID_SIZE = 16;
+				gridBG = FlxGridOverlay.create(GRID_SIZE, GRID_SIZE, GRID_SIZE * 20, GRID_SIZE * 16);
 				add(gridBG);
 			case 'headbutt unnerfed':
 				remove(gridBG);
-				GRID_SIZE = 26;
+				GRID_SIZE = 30;
 				gridBG = FlxGridOverlay.create(GRID_SIZE, GRID_SIZE, GRID_SIZE * 12, GRID_SIZE * 16);
 				add(gridBG);
 			case 'happy capri':
 				remove(gridBG);
-				GRID_SIZE = 26;
+				GRID_SIZE = 30;
 				gridBG = FlxGridOverlay.create(GRID_SIZE, GRID_SIZE, GRID_SIZE * 12, GRID_SIZE * 16);
 				add(gridBG);
 			case 'goat test':
 				remove(gridBG);
-				GRID_SIZE = 26;
+				GRID_SIZE = 30;
 				gridBG = FlxGridOverlay.create(GRID_SIZE, GRID_SIZE, GRID_SIZE * 12, GRID_SIZE * 16);
 				add(gridBG);
 		}
@@ -432,7 +447,7 @@ class ChartingState extends MusicBeatState
 		var tab_group_section = new FlxUI(null, UI_box);
 		tab_group_section.name = 'Section';
 
-		stepperLength = new FlxUINumericStepper(10, 10, 4, 0, 0, 999, 0);
+		stepperLength = new FlxUINumericStepper(10, 10, 16, 0, 0, 999, 0);
 		stepperLength.value = _song.notes[curSection].lengthInSteps;
 		stepperLength.name = "section_length";
 
@@ -483,6 +498,14 @@ class ChartingState extends MusicBeatState
 							_song.notes[curSection].sectionNotes[i] = note;
 							updateGrid();
 						}
+					case 'erect devilish':
+					for (i in 0..._song.notes[curSection].sectionNotes.length)
+						{
+							var note = _song.notes[curSection].sectionNotes[i];
+							note[1] = (note[1] + 6) % 12;
+							_song.notes[curSection].sectionNotes[i] = note;
+							updateGrid();
+						}
 					case 'old headbutt':
 					for (i in 0..._song.notes[curSection].sectionNotes.length)
 						{
@@ -504,6 +527,22 @@ class ChartingState extends MusicBeatState
 						{
 							var note = _song.notes[curSection].sectionNotes[i];
 							note[1] = (note[1] + 7) % 14;
+							_song.notes[curSection].sectionNotes[i] = note;
+							updateGrid();
+						}
+					case 'ten':
+					for (i in 0..._song.notes[curSection].sectionNotes.length)
+						{
+							var note = _song.notes[curSection].sectionNotes[i];
+							note[1] = (note[1] + 10) % 20;
+							_song.notes[curSection].sectionNotes[i] = note;
+							updateGrid();
+						}
+					case 'starblazing':
+					for (i in 0..._song.notes[curSection].sectionNotes.length)
+						{
+							var note = _song.notes[curSection].sectionNotes[i];
+							note[1] = (note[1] + 10) % 20;
 							_song.notes[curSection].sectionNotes[i] = note;
 							updateGrid();
 						}
@@ -859,6 +898,31 @@ class ChartingState extends MusicBeatState
 					}
 	
 				}
+				case 'erect devilish':
+					if ((upP || rightP || downP || leftP) && writingNotes)
+						{
+							for(i in 0...controlArray.length)
+							{
+								if (controlArray[i])
+								{
+									for (n in 0..._song.notes[curSection].sectionNotes.length)
+										{
+											var note = _song.notes[curSection].sectionNotes[n];
+											if (note == null)
+												continue;
+											if (note[0] == Conductor.songPosition && note[1] % 6 == i)
+											{
+												trace('GAMING');
+												_song.notes[curSection].sectionNotes.remove(note);
+											}
+										}
+									trace('adding note');
+									_song.notes[curSection].sectionNotes.push([Conductor.songPosition, i, 0]);
+									updateGrid();
+								}
+							}
+			
+						}
 			case 'old headbutt':
 			if ((upP || rightP || downP || leftP) && writingNotes)
 				{
@@ -934,6 +998,56 @@ class ChartingState extends MusicBeatState
 					}
 	
 				}
+			case 'ten':
+			if ((upP || rightP || downP || leftP) && writingNotes)
+				{
+					for(i in 0...controlArray.length)
+					{
+						if (controlArray[i])
+						{
+							for (n in 0..._song.notes[curSection].sectionNotes.length)
+								{
+									var note = _song.notes[curSection].sectionNotes[n];
+									if (note == null)
+										continue;
+									if (note[0] == Conductor.songPosition && note[1] % 10 == i)
+									{
+										trace('GAMING');
+										_song.notes[curSection].sectionNotes.remove(note);
+									}
+								}
+							trace('adding note');
+							_song.notes[curSection].sectionNotes.push([Conductor.songPosition, i, 0]);
+							updateGrid();
+						}
+					}
+	
+				}
+				case 'starblazing':
+					if ((upP || rightP || downP || leftP) && writingNotes)
+						{
+							for(i in 0...controlArray.length)
+							{
+								if (controlArray[i])
+								{
+									for (n in 0..._song.notes[curSection].sectionNotes.length)
+										{
+											var note = _song.notes[curSection].sectionNotes[n];
+											if (note == null)
+												continue;
+											if (note[0] == Conductor.songPosition && note[1] % 10 == i)
+											{
+												trace('GAMING');
+												_song.notes[curSection].sectionNotes.remove(note);
+											}
+										}
+									trace('adding note');
+									_song.notes[curSection].sectionNotes.push([Conductor.songPosition, i, 0]);
+									updateGrid();
+								}
+							}
+			
+						}
 			case 'headbutt unnerfed':
 			if ((upP || rightP || downP || leftP) && writingNotes)
 				{
@@ -1645,6 +1759,83 @@ class ChartingState extends MusicBeatState
 						curRenderedSustains.add(sustainVis);
 					}
 				}
+				case 'erect devilish':
+				remove(gridBG);
+				gridBG = FlxGridOverlay.create(GRID_SIZE, GRID_SIZE, GRID_SIZE * 12, GRID_SIZE * _song.notes[curSection].lengthInSteps);
+				add(gridBG);
+		
+				remove(gridBlackLine);
+				gridBlackLine = new FlxSprite(gridBG.x + gridBG.width / 2).makeGraphic(2, Std.int(gridBG.height), FlxColor.BLACK);
+				add(gridBlackLine);
+				
+				while (curRenderedNotes.members.length > 0)
+				{
+					curRenderedNotes.remove(curRenderedNotes.members[0], true);
+				}
+		
+				while (curRenderedSustains.members.length > 0)
+				{
+					curRenderedSustains.remove(curRenderedSustains.members[0], true);
+				}
+		
+				var sectionInfo:Array<Dynamic> = _song.notes[curSection].sectionNotes;
+		
+				if (_song.notes[curSection].changeBPM && _song.notes[curSection].bpm > 0)
+				{
+					Conductor.changeBPM(_song.notes[curSection].bpm);
+					FlxG.log.add('CHANGED BPM!');
+				}
+				else
+				{
+					// get last bpm
+					var daBPM:Int = _song.bpm;
+					for (i in 0...curSection)
+						if (_song.notes[i].changeBPM)
+							daBPM = _song.notes[i].bpm;
+					Conductor.changeBPM(daBPM);
+				}
+		
+				/* // PORT BULLSHIT, INCASE THERE'S NO SUSTAIN DATA FOR A NOTE
+					for (sec in 0..._song.notes.length)
+					{
+						for (notesse in 0..._song.notes[sec].sectionNotes.length)
+						{
+							if (_song.notes[sec].sectionNotes[notesse][2] == null)
+							{
+								trace('SUS NULL');
+								_song.notes[sec].sectionNotes[notesse][2] = 0;
+							}
+						}
+					}
+				 */
+		
+				for (i in sectionInfo)
+				{
+					var daNoteInfo = i[1];
+					var daStrumTime = i[0];
+					var daSus = i[2];
+					var daType = i[3];
+		
+					var note:Note = new Note(daStrumTime, daNoteInfo % 6, null, false, daType);
+					note.sustainLength = daSus;
+					note.setGraphicSize(GRID_SIZE, GRID_SIZE);
+					note.updateHitbox();
+					note.x = Math.floor(daNoteInfo * GRID_SIZE);
+					note.y = Math.floor(getYfromStrum((daStrumTime - sectionStartTime()) % (Conductor.stepCrochet * _song.notes[curSection].lengthInSteps)));
+		
+					if (curSelectedNote != null)
+						if (curSelectedNote[0] == note.strumTime)
+							lastNote = note;
+		
+					curRenderedNotes.add(note);
+		
+					if (daSus > 0)
+					{
+						var sustainVis:FlxSprite = new FlxSprite(note.x + (GRID_SIZE / 2),
+							note.y + GRID_SIZE).makeGraphic(8, Math.floor(FlxMath.remapToRange(daSus, 0, Conductor.stepCrochet * _song.notes[curSection].lengthInSteps, 0, gridBG.height)));
+						curRenderedSustains.add(sustainVis);
+					}
+				}
 				case 'kanashi yagi':
 				remove(gridBG);
 				gridBG = FlxGridOverlay.create(GRID_SIZE, GRID_SIZE, GRID_SIZE * 12, GRID_SIZE * _song.notes[curSection].lengthInSteps);
@@ -1934,6 +2125,160 @@ class ChartingState extends MusicBeatState
 					var daType = i[3];
 		
 					var note:Note = new Note(daStrumTime, daNoteInfo % 7, null, false, daType);
+					note.sustainLength = daSus;
+					note.setGraphicSize(GRID_SIZE, GRID_SIZE);
+					note.updateHitbox();
+					note.x = Math.floor(daNoteInfo * GRID_SIZE);
+					note.y = Math.floor(getYfromStrum((daStrumTime - sectionStartTime()) % (Conductor.stepCrochet * _song.notes[curSection].lengthInSteps)));
+		
+					if (curSelectedNote != null)
+						if (curSelectedNote[0] == note.strumTime)
+							lastNote = note;
+		
+					curRenderedNotes.add(note);
+		
+					if (daSus > 0)
+					{
+						var sustainVis:FlxSprite = new FlxSprite(note.x + (GRID_SIZE / 2),
+							note.y + GRID_SIZE).makeGraphic(8, Math.floor(FlxMath.remapToRange(daSus, 0, Conductor.stepCrochet * _song.notes[curSection].lengthInSteps, 0, gridBG.height)));
+						curRenderedSustains.add(sustainVis);
+					}
+				}
+				case 'ten':
+				remove(gridBG);
+				gridBG = FlxGridOverlay.create(GRID_SIZE, GRID_SIZE, GRID_SIZE * 20, GRID_SIZE * _song.notes[curSection].lengthInSteps);
+				add(gridBG);
+		
+				remove(gridBlackLine);
+				gridBlackLine = new FlxSprite(gridBG.x + gridBG.width / 2).makeGraphic(2, Std.int(gridBG.height), FlxColor.BLACK);
+				add(gridBlackLine);
+				
+				while (curRenderedNotes.members.length > 0)
+				{
+					curRenderedNotes.remove(curRenderedNotes.members[0], true);
+				}
+		
+				while (curRenderedSustains.members.length > 0)
+				{
+					curRenderedSustains.remove(curRenderedSustains.members[0], true);
+				}
+		
+				var sectionInfo:Array<Dynamic> = _song.notes[curSection].sectionNotes;
+		
+				if (_song.notes[curSection].changeBPM && _song.notes[curSection].bpm > 0)
+				{
+					Conductor.changeBPM(_song.notes[curSection].bpm);
+					FlxG.log.add('CHANGED BPM!');
+				}
+				else
+				{
+					// get last bpm
+					var daBPM:Int = _song.bpm;
+					for (i in 0...curSection)
+						if (_song.notes[i].changeBPM)
+							daBPM = _song.notes[i].bpm;
+					Conductor.changeBPM(daBPM);
+				}
+		
+				/* // PORT BULLSHIT, INCASE THERE'S NO SUSTAIN DATA FOR A NOTE
+					for (sec in 0..._song.notes.length)
+					{
+						for (notesse in 0..._song.notes[sec].sectionNotes.length)
+						{
+							if (_song.notes[sec].sectionNotes[notesse][2] == null)
+							{
+								trace('SUS NULL');
+								_song.notes[sec].sectionNotes[notesse][2] = 0;
+							}
+						}
+					}
+				 */
+		
+				for (i in sectionInfo)
+				{
+					var daNoteInfo = i[1];
+					var daStrumTime = i[0];
+					var daSus = i[2];
+					var daType = i[3];
+		
+					var note:Note = new Note(daStrumTime, daNoteInfo % 10, null, false, daType);
+					note.sustainLength = daSus;
+					note.setGraphicSize(GRID_SIZE, GRID_SIZE);
+					note.updateHitbox();
+					note.x = Math.floor(daNoteInfo * GRID_SIZE);
+					note.y = Math.floor(getYfromStrum((daStrumTime - sectionStartTime()) % (Conductor.stepCrochet * _song.notes[curSection].lengthInSteps)));
+		
+					if (curSelectedNote != null)
+						if (curSelectedNote[0] == note.strumTime)
+							lastNote = note;
+		
+					curRenderedNotes.add(note);
+		
+					if (daSus > 0)
+					{
+						var sustainVis:FlxSprite = new FlxSprite(note.x + (GRID_SIZE / 2),
+							note.y + GRID_SIZE).makeGraphic(8, Math.floor(FlxMath.remapToRange(daSus, 0, Conductor.stepCrochet * _song.notes[curSection].lengthInSteps, 0, gridBG.height)));
+						curRenderedSustains.add(sustainVis);
+					}
+				}
+				case 'starblazing':
+				remove(gridBG);
+				gridBG = FlxGridOverlay.create(GRID_SIZE, GRID_SIZE, GRID_SIZE * 20, GRID_SIZE * _song.notes[curSection].lengthInSteps);
+				add(gridBG);
+		
+				remove(gridBlackLine);
+				gridBlackLine = new FlxSprite(gridBG.x + gridBG.width / 2).makeGraphic(2, Std.int(gridBG.height), FlxColor.BLACK);
+				add(gridBlackLine);
+				
+				while (curRenderedNotes.members.length > 0)
+				{
+					curRenderedNotes.remove(curRenderedNotes.members[0], true);
+				}
+		
+				while (curRenderedSustains.members.length > 0)
+				{
+					curRenderedSustains.remove(curRenderedSustains.members[0], true);
+				}
+		
+				var sectionInfo:Array<Dynamic> = _song.notes[curSection].sectionNotes;
+		
+				if (_song.notes[curSection].changeBPM && _song.notes[curSection].bpm > 0)
+				{
+					Conductor.changeBPM(_song.notes[curSection].bpm);
+					FlxG.log.add('CHANGED BPM!');
+				}
+				else
+				{
+					// get last bpm
+					var daBPM:Int = _song.bpm;
+					for (i in 0...curSection)
+						if (_song.notes[i].changeBPM)
+							daBPM = _song.notes[i].bpm;
+					Conductor.changeBPM(daBPM);
+				}
+		
+				/* // PORT BULLSHIT, INCASE THERE'S NO SUSTAIN DATA FOR A NOTE
+					for (sec in 0..._song.notes.length)
+					{
+						for (notesse in 0..._song.notes[sec].sectionNotes.length)
+						{
+							if (_song.notes[sec].sectionNotes[notesse][2] == null)
+							{
+								trace('SUS NULL');
+								_song.notes[sec].sectionNotes[notesse][2] = 0;
+							}
+						}
+					}
+				 */
+		
+				for (i in sectionInfo)
+				{
+					var daNoteInfo = i[1];
+					var daStrumTime = i[0];
+					var daSus = i[2];
+					var daType = i[3];
+		
+					var note:Note = new Note(daStrumTime, daNoteInfo % 10, null, false, daType);
 					note.sustainLength = daSus;
 					note.setGraphicSize(GRID_SIZE, GRID_SIZE);
 					note.updateHitbox();
@@ -2328,6 +2673,21 @@ class ChartingState extends MusicBeatState
 
 			updateGrid();
 			updateNoteUI();
+			case 'erect devilish':
+			var swagNum:Int = 0;
+
+			for (i in _song.notes[curSection].sectionNotes)
+			{
+				if (i.strumTime == note.strumTime && i.noteData % 6 == note.noteData)
+				{
+					curSelectedNote = _song.notes[curSection].sectionNotes[swagNum];
+				}
+
+				swagNum += 1;
+			}
+
+			updateGrid();
+			updateNoteUI();
 			case 'old headbutt':
 			var swagNum:Int = 0;
 
@@ -2364,6 +2724,36 @@ class ChartingState extends MusicBeatState
 			for (i in _song.notes[curSection].sectionNotes)
 			{
 				if (i.strumTime == note.strumTime && i.noteData % 7 == note.noteData)
+				{
+					curSelectedNote = _song.notes[curSection].sectionNotes[swagNum];
+				}
+
+				swagNum += 1;
+			}
+
+			updateGrid();
+			updateNoteUI();
+			case 'ten':
+			var swagNum:Int = 0;
+
+			for (i in _song.notes[curSection].sectionNotes)
+			{
+				if (i.strumTime == note.strumTime && i.noteData % 10 == note.noteData)
+				{
+					curSelectedNote = _song.notes[curSection].sectionNotes[swagNum];
+				}
+
+				swagNum += 1;
+			}
+
+			updateGrid();
+			updateNoteUI();
+			case 'starblazing':
+			var swagNum:Int = 0;
+
+			for (i in _song.notes[curSection].sectionNotes)
+			{
+				if (i.strumTime == note.strumTime && i.noteData % 10 == note.noteData)
 				{
 					curSelectedNote = _song.notes[curSection].sectionNotes[swagNum];
 				}
@@ -2474,6 +2864,17 @@ class ChartingState extends MusicBeatState
 				}
 	
 				updateGrid();
+				case 'erect devilish':
+				lastNote = note;
+				for (i in _song.notes[curSection].sectionNotes)
+				{
+					if (i[0] == note.strumTime && i[1] % 6 == note.noteData)
+					{
+						_song.notes[curSection].sectionNotes.remove(i);
+					}
+				}
+	
+				updateGrid();
 				case 'old headbutt':
 				lastNote = note;
 				for (i in _song.notes[curSection].sectionNotes)
@@ -2501,6 +2902,28 @@ class ChartingState extends MusicBeatState
 				for (i in _song.notes[curSection].sectionNotes)
 				{
 					if (i[0] == note.strumTime && i[1] % 7 == note.noteData)
+					{
+						_song.notes[curSection].sectionNotes.remove(i);
+					}
+				}
+	
+				updateGrid();
+				case 'ten':
+				lastNote = note;
+				for (i in _song.notes[curSection].sectionNotes)
+				{
+					if (i[0] == note.strumTime && i[1] % 10 == note.noteData)
+					{
+						_song.notes[curSection].sectionNotes.remove(i);
+					}
+				}
+	
+				updateGrid();
+				case 'starblazing':
+				lastNote = note;
+				for (i in _song.notes[curSection].sectionNotes)
+				{
+					if (i[0] == note.strumTime && i[1] % 10 == note.noteData)
 					{
 						_song.notes[curSection].sectionNotes.remove(i);
 					}

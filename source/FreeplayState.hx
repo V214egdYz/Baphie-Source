@@ -34,6 +34,7 @@ class FreeplayState extends MusicBeatState
 	private var curPlaying:Bool = false;
 
 	private var iconArray:Array<HealthIcon> = [];
+	private var difficultyArray:Array<DifficultyIcon> = [];
 
 	override function create()
 	{
@@ -42,7 +43,7 @@ class FreeplayState extends MusicBeatState
 		for (i in 0...initSonglist.length)
 		{
 			var data:Array<String> = initSonglist[i].split(':');
-			songs.push(new SongMetadata(data[0], Std.parseInt(data[2]), data[1]));
+			songs.push(new SongMetadata(data[0], Std.parseInt(data[2]), data[1], data[3]));
 		}
 
 		
@@ -71,6 +72,9 @@ class FreeplayState extends MusicBeatState
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuBGBlue'));
 		add(bg);
 
+		var explanation:FlxSprite = new FlxSprite().loadGraphic(Paths.image('difficultyExplanation'));
+		add(explanation);
+
 		grpSongs = new FlxTypedGroup<Alphabet>();
 		add(grpSongs);
 
@@ -87,6 +91,14 @@ class FreeplayState extends MusicBeatState
 			// using a FlxGroup is too much fuss!
 			iconArray.push(icon);
 			add(icon);
+
+			var diff:DifficultyIcon = new DifficultyIcon(songs[i].songDifficulty);
+			diff.sprTracker = songText;
+			diff.x += 30;
+
+			// using a FlxGroup is too much fuss!
+			difficultyArray.push(diff);
+			add(diff);
 
 			// songText.x += 40;
 			// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
@@ -141,22 +153,27 @@ class FreeplayState extends MusicBeatState
 		super.create();
 	}
 
-	public function addSong(songName:String, weekNum:Int, songCharacter:String)
+	public function addSong(songName:String, weekNum:Int, songCharacter:String, songDifficulty:String)
 	{
-		songs.push(new SongMetadata(songName, weekNum, songCharacter));
+		songs.push(new SongMetadata(songName, weekNum, songCharacter, songDifficulty));
 	}
 
-	public function addWeek(songs:Array<String>, weekNum:Int, ?songCharacters:Array<String>)
+	public function addWeek(songs:Array<String>, weekNum:Int, ?songCharacters:Array<String>, ?songDifficulties:Array<String>)
 	{
 		if (songCharacters == null)
 			songCharacters = ['dad'];
 
+		if (songDifficulties == null)
+			songDifficulties = ['easy'];
+
 		var num:Int = 0;
 		for (song in songs)
 		{
-			addSong(song, weekNum, songCharacters[num]);
+			addSong(song, weekNum, songCharacters[num], songDifficulties[num]);
 
 			if (songCharacters.length != 1)
+				num++;
+			if (songDifficulties.length != 1)
 				num++;
 		}
 	}
@@ -274,6 +291,13 @@ class FreeplayState extends MusicBeatState
 
 		iconArray[curSelected].alpha = 1;
 
+		for (i in 0...difficultyArray.length)
+			{
+				difficultyArray[i].alpha = 0.6;
+			}
+	
+			difficultyArray[curSelected].alpha = 1;
+
 		for (item in grpSongs.members)
 		{
 			item.targetY = bullShit - curSelected;
@@ -296,11 +320,13 @@ class SongMetadata
 	public var songName:String = "";
 	public var week:Int = 0;
 	public var songCharacter:String = "";
+	public var songDifficulty:String = "";
 
-	public function new(song:String, week:Int, songCharacter:String)
+	public function new(song:String, week:Int, songCharacter:String, songDifficulty:String)
 	{
 		this.songName = song;
 		this.week = week;
 		this.songCharacter = songCharacter;
+		this.songDifficulty = songDifficulty;
 	}
 }
