@@ -1,45 +1,41 @@
 Tutorial:gf:1:effortless:
 Bopeebo:dad:1:effortless:
 Fresh:dad:1:easy:
-Dad Battle:dad:1:medium:
+Dad Battle:dad:1:easy:
 Spookeez:spooky:2:medium:
 South:spooky:2:medium:
-Monster:monster:2:medium:
-Pico:pico:3:medium:
+Monster:monster:2:easy:
+Pico:pico:3:easy:
 Philly Nice:pico:3:medium:
 Blammed:pico:3:medium:
 Satin Panties:mom:4:medium:
 High:mom:4:medium:
 Milf:mom:4:hard:
-Cocoa:parents-christmas:5:medium:
-Eggnog:parents-christmas:5:hard:
-Winter Horrorland:monster-christmas:5:medium:
-Senpai:senpai:6:medium:
-Roses:senpai:6:hard:
-Thorns:spirit:6:hard:
+Cocoa:parents-christmas:5:easy:
+Eggnog:parents-christmas:5:medium:
+Winter Horrorland:monster-christmas:5:easy:
+Senpai:senpai:6:easy:
+Roses:senpai:6:medium:
+Thorns:spirit:6:medium:
 Bleatings:baphie:7:hard:
 Erect Bleatings:baphie-headbutt:7:insane:
 Devilish:baphie-sheepish:7:difficult:
 Erect Devilish:baphie-headbutt:7:terrifying:
 Angelic:baphie-happy:7:challenging:
-Happy Capri:baphie-joy:7:intense:
-Kanashi Yagi:baphie-sad:7:challenging:
-Headbutt:baphie-headbutt:7:catastrophic:
+Erect Angelic:baphie-headbutt:7:terrifying:
+Manzoku:baphie-joy:7:remorseless:
+Fuseikaku:baphie-sad:7:remorseless:
+Erect Kanashi Yagi:baphie-headbutt:7:horrific:
+Headbutt:baphie-headbutt:7:horrific:
+Old Headbutt:baphie-ded:7:terrifying:
 Starblazing:baphie-headbutt:7:unreal:
-Corncob:corn:8:intense:
+Corncob:corn:8:remorseless:
 Cornstalk:corn:8:remorseless:
 Cornfield:corn:8:remorseless:
 Cinnabar:idle-cinnabar:9:difficult:
 Bejeweled:cinnabar:9:remorseless:
 Shellshock:cinnamad:9:easy:
-Painite:bf:9:intense:
-Schadenfreude:bf:9:extreme:
-Bullet Hell:bf:9:easy:
-Old Bleatings:baphie-ded:7:medium:
-Pentagrammatic:baphie-ded:7:hard:
-Candlelit:baphie-ded:7:hard:
-Old Headbutt:baphie-headbutt:7:terrifying:
-Headbutt Unnerfed:baphie-ded:7:horrific:
-Old Bejeweled:idle-cinnabar:9:extreme:
-Old Shellshock:idle-cinnabar:9:terrifying:
-Original Shellshock:idle-cinnabar:9:insane:
+Painite:painite:9:intense:
+Schadenfreude:painite:9:extreme:
+Bullet Hell:painite:9:easy:
+Flaying:cinnamad:9:easy:

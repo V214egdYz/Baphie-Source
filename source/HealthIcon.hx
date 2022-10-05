@@ -56,6 +56,8 @@ class HealthIcon extends FlxSprite
 		animation.add('bf-pixelold', [43, 43], 0, false, isPlayer);
 		animation.add('bf-pixelmean', [44, 44], 0, false, isPlayer);
 		animation.add('idle-cinnabar', [45, 45], 0, false, isPlayer);
+		animation.add('baphie-new', [24, 25], 0, false, isPlayer);
+		animation.add('painite', [46, 47], 0, false, isPlayer);
 		animation.play(char);
 
 		switch(char)

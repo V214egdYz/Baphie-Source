@@ -30,8 +30,8 @@ class DifficultyIcon extends FlxSprite
 		animation.add('catastrophic', [11, 11], 0, false, isPlayer);
 		animation.add('horrific', [12, 12], 0, false, isPlayer);
 		animation.add('unreal', [13, 13], 0, false, isPlayer);
-		animation.add('nightmarish', [14, 14], 0, false, isPlayer);
-		animation.add('nightmarishplus', [15, 15], 0, false, isPlayer);
+		animation.add('nightmare', [14, 14], 0, false, isPlayer);
+		animation.add('nightmareplus', [15, 15], 0, false, isPlayer);
 		animation.play(char);
 
 		scrollFactor.set();

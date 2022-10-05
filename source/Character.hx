@@ -899,6 +899,23 @@ class Character extends FlxSprite
 
 					playAnim('idle');
 
+					case 'baphie-new':
+						tex = Paths.getSparrowAtlas('characters/newBaphie');
+						frames = tex;
+						animation.addByPrefix('idle', 'Gote Idle', 24);
+						animation.addByPrefix('singUP', 'Gote Up', 24);
+						animation.addByPrefix('singRIGHT', 'Gote Right', 24);
+						animation.addByPrefix('singDOWN', 'Gote Down', 24);
+						animation.addByPrefix('singLEFT', 'Gote Left', 24);
+	
+						addOffset('idle');
+						addOffset("singUP");
+						addOffset("singRIGHT");
+						addOffset("singLEFT");
+						addOffset("singDOWN");
+	
+						playAnim('idle');
+
 					case 'corn-dark':
 					tex = Paths.getSparrowAtlas('characters/cornManDark');
 					frames = tex;

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TextureAtlas imagePath="baphieNormal.png">
 	<!-- NOT created with Adobe Animate version 20.0.0.17400, I don't have it ;w; ->
-	<!-- http://www.adobe.com/products/animate.html -->
+	<- http://www.adobe.com/products/animate.html -->
 	<SubTexture name="Gote Down0000" x="0" y="660" width="817" height="660" frameX="0" frameY="55" frameWidth="817" frameHeight="660"/>
 	<SubTexture name="Gote Down0001" x="0" y="660" width="817" height="660" frameX="0" frameY="55" frameWidth="817" frameHeight="660"/>
 	<SubTexture name="Gote Down0002" x="5719" y="0" width="817" height="660" frameX="0" frameY="55" frameWidth="817" frameHeight="660"/>

@@ -136,9 +136,9 @@ class Ratings
             return "good";
         else if (noteDiff > 35 * customTimeScale) // sick(E)
             return "sick";
-        else if (noteDiff > 25 * customTimeScale) // marvelous(E)
+        else if (noteDiff > 20 * customTimeScale) // marvelous(E)
             return "marvelous";
-        else if (noteDiff < -25 * customTimeScale) // marvelous(L)
+        else if (noteDiff < -20 * customTimeScale) // marvelous(L)
             return "marvelous";
         else if (noteDiff < -35 * customTimeScale) // sick(L)
             return "sick";
