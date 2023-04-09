@@ -181,7 +181,7 @@ class Note extends FlxSprite
 						antialiasing = true;
 					case 'starblazing':
 						swagWidth = 80 * 0.7;
-						setGraphicSize(Std.int(width * 0.45));
+						setGraphicSize(Std.int(width * 0.4));
 						updateHitbox();
 						antialiasing = true;
 					case 'headbutt':

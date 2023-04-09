@@ -24,6 +24,7 @@ class OptionsMenu extends MusicBeatState
 			new DFJKOption(controls),
 			new DownscrollOption("Change the layout of the strumline."),
 			new HealthLossOption("Changes health loss from inaccurate hits (ex. Shit: Kade = 0.2, Fair = 0.06)"),
+			new ShitMissOption("Determines if Shits should break your combo number or not."),
 			new AntiMashOption("Antimash determines whether you get punished for mashing notes or not."),
 			new GhostTapOption("Ghost Tapping is when you tap a direction and it doesn't give you a miss."),
 			new Judgement("Customize your Hit Timings (LEFT or RIGHT)"),
